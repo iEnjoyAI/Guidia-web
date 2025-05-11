@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contacto - GUIDIA</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background-image: url('tours/benidorm/fondo-web-2.png');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom, rgba(247, 244, 240, 0.6), rgba(255, 255, 255, 0.2));
+      z-index: -1;
+    }
+
+    header {
+      text-align: center;
+      padding: 4em 1em 2em;
+    }
+
+    header img {
+      width: 200px;
+      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2em;
+      padding: 1em;
+      background-color: #5a6373;
+    }
+
+    .nav-link {
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav-link.active,
+    .nav-link:hover {
+      color: #1E90FF;
+    }
+
+    .language-dropdown {
+      position: absolute;
+      top: 1.5em;
+      right: 1.5em;
+      z-index: 1000;
+    }
+
+    .language-dropdown select {
+      padding: 0.3em 0.8em;
+      font-size: 0.95em;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      background-color: white;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    main {
+      max-width: 600px;
+      margin: 3em auto 0;
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 2em;
+      border-radius: 16px;
+      text-align: center;
+    }
+
+    h1 {
+      color: #1E90FF;
+      margin-bottom: 0.5em;
+    }
+
+    p {
+      font-size: 1.1em;
+      margin-bottom: 2em;
+    }
+
+    .contact-button {
+      background-color: #1E90FF;
+      color: white;
+      font-size: 1.1em;
+      padding: 0.8em 2em;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .contact-button:hover {
+      background-color: #186bb5;
+    }
+
+    footer {
+      margin-top: 4em;
+      text-align: center;
+      font-size: 0.9em;
+      color: white;
+      background-color: #000;
+      padding: 2em 1em;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="language-dropdown">
+    <select name="language" id="language">
+      <option value="es" selected>🇪🇸 Español</option>
+      <option value="en">🇬🇧 English</option>
+    </select>
+  </div>
+
+  <header>
+    <img src="logo/logo-guidia.png" alt="Logo GUIDIA" />
+  </header>
+
+  <nav>
+    <a href="index.html" class="nav-link">Inicio</a>
+    <a href="todos-los-tours.html" class="nav-link">Todos los tours</a>
+    <a href="proximos-tours.html" class="nav-link">Próximos tours</a>
+    <a href="sobre-nosotros.html" class="nav-link">Sobre nosotros</a>
+    <a href="contacto.html" class="nav-link active">Contacto</a>
+  </nav>
+
+  <main>
+    <h1>¿Quieres contactar con nosotros?</h1>
+    <p>Estaremos encantados de ayudarte. Escríbenos por email y te responderemos lo antes posible.</p>
+
+    <a href="mailto:tuemail@ejemplo.com" class="contact-button">Enviar email</a>
+  </main>
+
+  <footer>
+    © 2025 GUIDIA · Todos los derechos reservados.
+  </footer>
+
+</body>
+</html>

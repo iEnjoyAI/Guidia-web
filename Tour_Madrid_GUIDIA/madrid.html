@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tour Madrid - GUIDIA</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      background-color: #ffffff;
+      color: #000000;
+    }
+    header {
+      background-color: #1E90FF;
+      color: white;
+      padding: 2em;
+      text-align: center;
+    }
+    .container {
+      padding: 2em;
+      text-align: center;
+    }
+    .audio-btn {
+      display: inline-block;
+      background-color: #1E90FF;
+      color: white;
+      padding: 0.75em 1.5em;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1em;
+      margin-top: 1em;
+    }
+    .placeholder-map {
+      margin-top: 2em;
+      height: 300px;
+      background-color: #f3f1ee;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #666;
+      border-radius: 12px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Tour por Madrid</h1>
+    <p>Explora Madrid con tu guía en voz IA</p>
+  </header>
+
+  <div class="container">
+    <p>Este tour incluye 5 paradas emblemáticas de la ciudad. Escucha la narración y sigue el recorrido.</p>
+    <button class="audio-btn" onclick="playAudio()">Reproducir audio guía</button>
+    <div class="placeholder-map">Aquí irá el mapa de Madrid (próximamente)</div>
+  </div>
+
+  <script>
+    function playAudio() {
+      alert("Aquí se reproducirá la guía de Madrid cuando esté disponible.");
+    }
+  </script>
+</body>
+</html>

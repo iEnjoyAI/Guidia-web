@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tour Benidorm - GUIDIA</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background-image: url('tours/benidorm/fondo-web-2.png');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-attachment: fixed;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom, rgba(247, 244, 240, 0.6), rgba(255, 255, 255, 0.2));
+      z-index: -1;
+    }
+
+    .hero-header {
+      background-image: url('tours/benidorm/banner-benidorm.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      padding: 5em 1em;
+      text-align: center;
+      position: relative;
+      color: white;
+    }
+
+    .hero-header::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.2));
+      z-index: 0;
+    }
+
+    .hero-header img,
+    .hero-header .header-subtitle {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-header img {
+      width: 200px;
+      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+    }
+
+    .header-subtitle {
+      margin-top: 0.5em;
+      font-size: 1.1em;
+      font-weight: 500;
+      color: white;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 2em;
+      padding: 1em;
+      background-color: #5a6373;
+    }
+
+    .nav-link {
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav-link.active,
+    .nav-link:hover {
+      color: #1E90FF;
+    }
+
+    .language-dropdown {
+      position: absolute;
+      top: 1.5em;
+      right: 1.5em;
+      z-index: 1000;
+    }
+
+    .language-dropdown select {
+      padding: 0.3em 0.8em;
+      font-size: 0.95em;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      background-color: white;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    section {
+      margin-bottom: 3em;
+    }
+
+    .tour-stop {
+      background-size: cover;
+      background-position: center;
+      padding: 0.5em 1em;
+      margin-bottom: 0.2em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .content-block {
+      background-color: rgba(255, 255, 255, 0.85);
+      padding: 2em;
+      border-radius: 16px;
+      max-width: 600px;
+      text-align: center;
+      margin: 0 auto;
+    }
+
+    .tour-image {
+      width: 100%;
+      max-width: 600px;
+      height: auto;
+      margin-top: 1em;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    h2 {
+      color: #1E90FF;
+      margin-bottom: 0.5em;
+    }
+
+    .tour-action {
+      text-align: center;
+      margin: 3em auto;
+    }
+
+    .tour-action button {
+      background-color: #1E90FF;
+      color: white;
+      font-size: 1.1em;
+      padding: 0.8em 2em;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .tour-action button:hover {
+      background-color: #186bb5;
+    }
+
+   .review-form {
+  background-color: #f3f1ee;
+  padding: 2em 1em;
+  text-align: center;
+  margin-top: 5em;
+  color: white;
+}
+    .review-form h3 {
+      color: #1E90FF;
+      margin-bottom: 1em;
+    }
+
+    .review-form form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .review-form input,
+    .review-form textarea {
+      width: 90%;
+      max-width: 600px;
+      margin-bottom: 1em;
+      padding: 0.8em;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1em;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .review-form button {
+      background-color: #1E90FF;
+      color: white;
+      font-size: 1em;
+      padding: 0.6em 1.5em;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .review-form button:hover {
+      background-color: #186bb5;
+    }
+
+   .tour-reviews {
+  background-color: #f3f1ee;
+  padding: 2em 1em;
+  text-align: center;
+}
+
+    .tour-reviews h3 {
+      color: #1E90FF;
+      margin-bottom: 1em;
+    }
+
+    .review {
+      max-width: 600px;
+      margin: 1em auto;
+      background-color: #fff;
+      padding: 1em;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+      font-size: 0.95em;
+      text-align: left;
+    }
+
+    footer {
+      background-color: #000;
+      color: white;
+      text-align: center;
+      padding: 2em 1em;
+    }
+  </style>
+</head>
+<body>
+  <header class="hero-header">
+    <img src="logo/logo-guidia.png" alt="Logo GUIDIA" />
+    <p class="header-subtitle">Tu guía inteligente para descubrir Benidorm</p>
+  </header>
+
+  <nav>
+    <a href="index.html" class="nav-link">Inicio</a>
+    <a href="todos-los-tours.html" class="nav-link active">Todos los tours</a>
+    <a href="proximos-tours.html" class="nav-link">Próximos tours</a>
+    <a href="sobre-nosotros.html" class="nav-link">Sobre nosotros</a>
+    <a href="contacto.html" class="nav-link">Contacto</a>
+  </nav>
+
+  <div class="language-dropdown">
+    <select name="language" id="language">
+      <option value="es" selected>🇪🇸 Español</option>
+      <option value="en">🇬🇧 English</option>
+    </select>
+  </div>
+
+  <section class="tour-stop" style="background-image: url('tours/benidorm/castillo.jpg');">
+    <div class="content-block">
+      <h2>Castillo de Benidorm</h2>
+      <p>Un icónico balcón entre acantilados que separa las dos playas y ofrece una postal perfecta del mar.</p>
+      <img src="tours/benidorm/Castillo.png" alt="Vista del Castillo de Benidorm desde el mar al atardecer" class="tour-image" />
+    </div>
+  </section>
+
+  <section class="tour-stop" style="background-image: url('tours/benidorm/isla.jpg');">
+    <div class="content-block">
+      <h2>Isla de Benidorm</h2>
+      <p>Visible desde la playa, esta isla misteriosa está rodeada de leyendas y es un paraíso para el snorkel.</p>
+      <img src="tours/benidorm/Isla.png" alt="Isla de Benidorm vista aérea" class="tour-image" />
+    </div>
+  </section>
+
+  <section class="tour-stop" style="background-image: url('tours/benidorm/iglesia.jpg');">
+    <div class="content-block">
+      <h2>Iglesia de San Jaime y Santa Ana</h2>
+      <p>Una joya blanca y azul del siglo XVIII en lo alto del casco antiguo, con vistas al mar y encanto tradicional.</p>
+      <img src="tours/benidorm/Iglesia.png" alt="Iglesia de San Jaime y Santa Ana" class="tour-image" />
+    </div>
+  </section>
+
+  <section class="tour-stop" style="background-image: url('tours/benidorm/playa.jpg');">
+    <div class="content-block">
+      <h2>Playa de Poniente</h2>
+      <p>Relájate frente al mar en uno de los paseos más modernos y premiados de Europa.</p>
+      <img src="tours/benidorm/Paseo.png" alt="Paseo de Poniente" class="tour-image" />
+    </div>
+  </section>
+
+  <section class="tour-stop" style="background-image: url('tours/benidorm/tossal.jpg');">
+    <div class="content-block">
+      <h2>Tossal de la Cala</h2>
+      <p>Un mirador tranquilo con restos romanos y vistas espectaculares de la bahía de Benidorm.</p>
+      <img src="tours/benidorm/Tossal.png" alt="Tossal de la Cala con la playa de la cala de fondo" class="tour-image" />
+    </div>
+  </section>
+
+  <div class="tour-action">
+    <button>Descargar tour</button>
+  </div>
+
+  <section class="review-form">
+    <h3>¿Has hecho este tour? ¡Déjanos tu reseña!</h3>
+    <form>
+      <input type="text" name="nombre" placeholder="Tu nombre" required>
+      <textarea name="comentario" placeholder="Escribe tu reseña aquí..." rows="4" required></textarea>
+      <button type="submit">Enviar reseña</button>
+    </form>
+  </section>
+
+  <section class="tour-reviews">
+    <h3>Lo que opinan otros viajeros</h3>
+    <div class="review">
+      <p><strong>Lucía M. ⭐⭐⭐⭐⭐</strong><br>Muy útil. Nos encantó el punto del Tossal, no lo conocíamos y las vistas son brutales.</p>
+    </div>
+    <div class="review">
+      <p><strong>Raúl G. ⭐⭐⭐⭐☆</strong><br>Audio claro y bien explicado. La parada en la iglesia fue mi favorita.</p>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 GUIDIA · Todos los derechos reservados.
+  </footer>
+</body>
+</html>
+
