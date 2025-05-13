@@ -1,0 +1,232 @@
+/* --- Estilos generales --- */
+
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  background-image: url('images/fondo-guidia.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  color: #000;
+}
+
+/* Fondo difuminado */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(247, 244, 240, 0.6), rgba(255, 255, 255, 0.2));
+  z-index: -1;
+  backdrop-filter: blur(1px);
+}
+
+/* Header */
+header {
+  text-align: center;
+  padding: 4em 1em 2em;
+}
+
+header img {
+  width: 200px;
+  max-width: 80%;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+/* NAV */
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+  padding: 1em;
+  background-color: #5a6373;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-link.active,
+.nav-link:hover {
+  color: #1E90FF;
+}
+
+/* Barra de idioma */
+.language-dropdown {
+  position: absolute;
+  top: 1.5em;
+  right: 1.5em;
+  z-index: 1000;
+}
+
+.language-dropdown select {
+  padding: 0.3em 0.8em;
+  font-size: 0.95em;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background-color: white;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Intro GUIDIA */
+.intro-guidia {
+  text-align: center;
+  max-width: 700px;
+  margin: 2em auto;
+  padding: 0 1em;
+}
+
+.intro-guidia p {
+  font-size: 1.2em;
+  line-height: 1.6;
+  color: #333;
+}
+.intro-guidia h2 {
+  font-size: 1.8em;
+  margin-bottom: 0.5em;
+  color: #1E90FF;
+}
+.page-intro h1 {
+  font-size: 2.4em;
+  color: #1E90FF;
+  margin-bottom: 0.5em;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+  letter-spacing: 0.5px;
+}
+
+.intro-guidia .highlight {
+  color: #1E90FF;
+  font-weight: 600;
+}
+
+/* Animación suave */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.intro-guidia {
+  animation: fadeIn 1s ease;
+}
+
+/* Main y contenido */
+main {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 2em;
+  border-radius: 16px;
+  text-align: center;
+}
+
+h1 {
+  color: #1E90FF;
+  margin-bottom: 0.5em;
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.6;
+  margin-bottom: 1.5em;
+}
+
+.tour-list {
+  display: flex;
+  flex-direction: column;
+  gap: 3em; /* más espacio entre tarjetas */
+  max-width: 600px;
+  width: 100%;
+  margin: 2em auto;
+}
+
+
+.tour-card {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 1.5em;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  font-size: 1.1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tour-card p {
+  margin: 0.5em 0 0;
+  font-size: 1em;
+  text-align: center;
+}
+
+.view-button {
+  margin-top: 1.5em;
+  background-color: #1E90FF;
+  color: white;
+  font-size: 1.1em;
+  padding: 0.8em 2em;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.view-button:hover {
+  background-color: #186bb5;
+}
+
+/* Footer */
+footer {
+  background-color: #000;
+  color: white;
+  text-align: center;
+  padding: 2em 1em;
+  margin-top: 4em;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+    padding: 1em 0;
+  }
+
+  .nav-link {
+    font-size: 1em;
+    display: block;
+  }
+
+  header img {
+    width: 150px;
+  }
+
+  main {
+    padding: 2em 1em;
+  }
+
+  .view-button,
+  .contact-button {
+    font-size: 1em;
+    padding: 0.7em 1.5em;
+  }
+
+  .language-dropdown {
+    top: 1em;
+    right: 1em;
+    transform: scale(0.9);
+  }
+}
