@@ -107,7 +107,10 @@ nav {
   margin: 0.5em auto 0;
   border-radius: 3px;
 }
-
+.page-intro strong {
+  color: #1E90FF;
+  font-weight: 600;
+}
 .intro-guidia .highlight {
   color: #1E90FF;
   font-weight: 600;
@@ -125,8 +128,11 @@ nav {
   letter-spacing: 0.3px;
 }
 .faqs {
-  margin-top: 4em;
-  text-align: left;
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 2em;
+  border-radius: 12px;
+  margin-top: 3em;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
 }
 
 .faqs h2 {
@@ -282,5 +288,10 @@ footer {
     top: 1em;
     right: 1em;
     transform: scale(0.9);
+  }
+
+  .faqs h2 {
+    font-size: 1.5em;
+    color: #1E90FF !important;
   }
 }
