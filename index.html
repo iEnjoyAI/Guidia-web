@@ -3,176 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>GUIDIA - Inicio</title>
+  <title>GUIDIA</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
-  <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    html, body {
-      height: 100%;
-      margin: 0;
-      font-family: 'Montserrat', sans-serif;
-    }
-
-    body {
-      display: flex;
-      flex-direction: column;
-      background-image: url('images/fondo-guidia.png');
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
-      background-repeat: no-repeat;
-      color: #000;
-    }
-
-    body::before {
-      content: "";
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(to bottom, rgba(247, 244, 240, 0.6), rgba(255, 255, 255, 0.2));
-      z-index: -1;
-    }
-
-    header {
-      background-color: transparent;
-      text-align: center;
-      padding: 2em 1em 1em;
-    }
-
-    header img {
-      width: 200px;
-      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
-    }
-
-    nav {
-      display: flex;
-      justify-content: center;
-      gap: 2em;
-      padding: 1em;
-      background-color: #5a6373;
-    }
-
-    .nav-link {
-      text-decoration: none;
-      color: white;
-      font-weight: 500;
-      transition: color 0.3s;
-    }
-
-    .nav-link.active,
-    .nav-link:hover {
-      color: #1E90FF;
-    }
-
-    .language-dropdown {
-      position: absolute;
-      top: 1.5em;
-      right: 1.5em;
-      z-index: 1000;
-    }
-
-    .language-dropdown select {
-      padding: 0.3em 0.8em;
-      font-size: 0.95em;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-      background-color: white;
-      font-family: 'Montserrat', sans-serif;
-    }
-
-    main {
-      padding: 4em 2em;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    h1 {
-      color: #1E90FF;
-      margin-bottom: 1em;
-    }
-
-    .tour-list {
-      display: flex;
-      flex-direction: column;
-      gap: 2em;
-      max-width: 600px;
-      width: 100%;
-    }
-
-    .tour-card {
-      background-color: rgba(255, 255, 255, 0.9);
-      padding: 1.5em;
-      border-radius: 12px;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-      font-size: 1.1em;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .tour-button,
-    .view-button {
-      margin-top: 1.5em;
-      background-color: #1E90FF;
-      color: white;
-      font-size: 1.1em;
-      padding: 0.8em 2em;
-      border: none;
-      border-radius: 12px;
-      cursor: pointer;
-      text-decoration: none;
-      display: inline-block;
-      transition: background-color 0.3s ease;
-    }
-
-    .tour-button:hover,
-    .view-button:hover {
-      background-color: #186bb5;
-    }
-
-    footer {
-      background-color: #000;
-      color: white;
-      text-align: center;
-      padding: 2em 1em;
-    }
-@media (max-width: 768px) {
-  nav {
-    flex-direction: column;
-    align-items: center;
-    gap: 1em;
-    padding: 1em;
-  }
-
-  .nav-link {
-    font-size: 1.1em;
-    display: block;
-  }
-
-  header {
-    padding: 2em 1em 1em;
-  }
-
-  header img {
-    width: 150px;
-  }
-
-  main {
-    padding: 2em 1em;
-  }
-}
-
-
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
+  <div class="language-dropdown">
+    <select name="language" id="language">
+      <option value="es" selected>🇪🇸 Español</option>
+      <option value="en">🇬🇧 English</option>
+    </select>
+  </div>
 
   <header>
     <img src="logo/logo-guidia.png" alt="Logo GUIDIA" />
@@ -186,15 +28,16 @@
     <a href="contacto.html" class="nav-link">Contacto</a>
   </nav>
 
-  <div class="language-dropdown">
-    <select name="language" id="language">
-      <option value="es" selected>🇪🇸 Español</option>
-      <option value="en">🇬🇧 English</option>
-    </select>
-  </div>
-
   <main>
-    <h1>Tours destacados</h1>
+   <section class="intro-guidia">
+  <h2>Explora la ciudad a tu ritmo</h2>
+  <p>
+    <span class="highlight">GUIDIA</span> es una app web que activa <strong>audios generados con IA</strong> cuando llegas a cada punto clave del recorrido.<br>
+    Sin tocar nada. Caminas, exploras... y tu móvil <em>te cuenta lo que ves</em>.
+  </p>
+</section>
+
+
     <div class="tour-list">
       <div class="tour-card">
         <strong>Benidorm histórico</strong>
@@ -212,8 +55,6 @@
         <a href="#" class="view-button">Ver tour</a>
       </div>
     </div>
-
-    <a href="todos-los-tours.html" class="tour-button">Ver todos los tours</a>
   </main>
 
   <footer>
