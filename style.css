@@ -108,7 +108,7 @@ nav {
   border-radius: 3px;
 }
 .page-intro strong {
-  color: #1E90FF;
+  color: #1E90FF !important;
   font-weight: 600;
 }
 .intro-guidia .highlight {
@@ -131,8 +131,10 @@ nav {
   background-color: rgba(255, 255, 255, 0.85);
   padding: 2em;
   border-radius: 12px;
-  margin-top: 3em;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+  margin: 3em auto;
+  max-width: 650px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  text-align: left;
 }
 
 .faqs h2 {
@@ -184,10 +186,12 @@ nav {
 
 /* Main y contenido */
 main {
+  background-color: rgba(255, 255, 255, 0.95); /* más sólido */
+  border-radius: 20px;
+  padding: 3em 2em;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   max-width: 700px;
-  margin: 0 auto;
-  padding: 2em;
-  border-radius: 16px;
+  margin: 3em auto 0;
   text-align: center;
 }
 
