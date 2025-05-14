@@ -115,6 +115,19 @@ nav {
   color: #1E90FF;
   font-weight: 600;
 }
+.page-subtext {
+  font-size: 1.2em;
+  font-weight: 600;
+  color: #222;
+  background-color: rgba(90, 99, 115, 0.2); /* gris MUY suave */
+  border: 1px solid rgba(90, 99, 115, 0.1); /* borde gris clarito */
+  padding: 0.8em 1.5em;
+  border-radius: 12px;
+  display: inline-block;
+  margin-top: 1em;
+  letter-spacing: 0.3px;
+}
+
 
 /* Animación suave */
 @keyframes fadeIn {
