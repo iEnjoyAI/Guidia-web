@@ -23,10 +23,13 @@ body::before {
   z-index: -1;
   backdrop-filter: blur(1px);
 }
+
+/* Header */
 header {
   text-align: center;
   padding: 4em 1em 2em;
 }
+
 header img {
   width: 200px;
   max-width: 80%;
@@ -85,19 +88,62 @@ nav {
   line-height: 1.6;
   color: #333;
 }
+
 .intro-guidia h2 {
   font-size: 1.8em;
   margin-bottom: 0.5em;
   color: #1E90FF;
 }
-.page-intro h1 {
-  font-size: 2.2em;
+.section-title {
+  font-size: 1.8em;
   color: #1E90FF;
+  text-align: center;
+  margin-top: 2em;
+  margin-bottom: 1em;
+  position: relative;
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: #1E90FF;
+  margin: 0.5em auto 0;
+  border-radius: 3px;
+}
+
+/* MAIN CONTENEDOR PRINCIPAL */
+.main-container {
+  max-width: 900px;
+  margin: 3em auto;
+  padding: 3em 2em;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+.page-intro {
+  font-size: 1.15em;
+  line-height: 1.7;
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 2em;
+  border-radius: 16px;
+  margin-bottom: 2em;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    text-align: center; /* ✨ Centra todo el contenido del bloque */
+}
+/* Página Intro */
+.page-intro h1 {
+  font-size: 2em; /* O incluso 2.6em si lo quieres más impactante */
+  text-align: center; /* Asegura el centrado si hay override */
   margin-bottom: 0.6em;
+  color: #1E90FF;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
   letter-spacing: 0.5px;
   position: relative;
 }
+
 .page-intro h1::after {
   content: "";
   display: block;
@@ -111,30 +157,28 @@ nav {
   color: #1E90FF !important;
   font-weight: 600;
 }
-.intro-guidia .highlight {
-  color: #1E90FF;
-  font-weight: 600;
-}
+
 .page-subtext {
   font-size: 1.2em;
   font-weight: 600;
   color: #222;
-  background-color: rgba(90, 99, 115, 0.2); /* gris MUY suave */
-  border: 1px solid rgba(90, 99, 115, 0.1); /* borde gris clarito */
+  background-color: rgba(90, 99, 115, 0.2);
+  border: 1px solid rgba(90, 99, 115, 0.1);
   padding: 0.8em 1.5em;
   border-radius: 12px;
   display: inline-block;
   margin-top: 1em;
   letter-spacing: 0.3px;
+  text-align: center;
 }
+
+/* FAQS */
 .faqs {
   background-color: rgba(255, 255, 255, 0.85);
   padding: 2em;
   border-radius: 12px;
-  margin: 3em auto;
-  max-width: 650px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-  text-align: left;
+  text-align: center;
 }
 
 .faqs h2 {
@@ -144,6 +188,7 @@ nav {
   text-align: center;
   position: relative;
 }
+
 .faqs h2::after {
   content: "";
   display: block;
@@ -153,10 +198,6 @@ nav {
   margin: 0.5em auto 0;
   border-radius: 3px;
 }
-.faq-item {
-  margin-bottom: 2em;
-}
-
 .faq-item h3 {
   color: #333;
   font-size: 1.2em;
@@ -165,10 +206,11 @@ nav {
 
 .faq-item p {
   color: #555;
-  font-size: 1em;
-  line-height: 1.6;
+  font-size: 1.15em;
+  line-height: 1.7;
 }
 
+/* ANIMACIONES */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -184,38 +226,48 @@ nav {
   animation: fadeIn 1s ease;
 }
 
-/* Main y contenido */
-main {
-  background-color: rgba(255, 255, 255, 0.95); /* más sólido */
-  border-radius: 20px;
-  padding: 3em 2em;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  max-width: 700px;
-  margin: 3em auto 0;
-  text-align: center;
+/* Tarjetas de parada */
+.tour-stop {
+  background-size: cover;
+  background-position: center;
+  padding: 2em;
+  border-radius: 16px;
+  color: white;
+  margin-bottom: 2em;
+  position: relative;
+}
+.tour-stop .content-block {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 1.5em;
+  border-radius: 12px;
+}
+.tour-stop h2 {
+  margin-top: 0;
+  font-size: 1.6rem;
 }
 
-h1 {
-  color: #1E90FF;
-  margin-bottom: 0.5em;
+.tour-stop p {
+  margin-bottom: 10px;
+  font-size: 1em;
 }
 
-p {
-  font-size: 1.1em;
-  line-height: 1.6;
-  margin-bottom: 1.5em;
+.tour-image {
+  width: 100%;
+  max-width: 400px;
+  margin: 10px auto 0;
+  border-radius: 8px;
+  display: block;
+  border: 4px solid #fff; /* 🟦 Borde blanco elegante */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* 🌑 Sombra suave */
 }
 
 .tour-list {
   display: flex;
   flex-direction: column;
-  gap: 3em; /* más espacio entre tarjetas */
-  max-width: 600px;
+  gap: 2em;
   width: 100%;
-  margin: 2em auto;
+  margin: 2em 0;
 }
-
-
 .tour-card {
   background-color: rgba(255, 255, 255, 0.9);
   padding: 1.5em;
@@ -225,14 +277,65 @@ p {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.tour-card p {
-  margin: 0.5em 0 0;
-  font-size: 1em;
   text-align: center;
 }
+.tour-card h2 {
+  color: #1E90FF;
+  font-weight: 600;
+  margin-bottom: 0.8em;
+  position: relative;
+}
 
+.tour-card h2::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 3px;
+  background-color: #1E90FF;
+  margin: 0.5em auto 0;
+  border-radius: 3px;
+}
+
+
+/* Botón de descarga */
+.tour-action {
+  text-align: center;
+  margin: 40px 0;
+}
+.tour-action button {
+  background-color: #1E90FF;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+/* Reseñas */
+.review-form, .tour-reviews {
+  margin-top: 40px;
+}
+.review-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.review-form input,
+.review-form textarea {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-family: 'Montserrat', sans-serif;
+}
+.review-form button {
+  align-self: flex-start;
+  background-color: #1E90FF;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
 .view-button {
   margin-top: 1.5em;
   background-color: #1E90FF;
@@ -251,6 +354,12 @@ p {
   background-color: #186bb5;
 }
 
+.review {
+  background-color: #f3f3f3;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
 /* Footer */
 footer {
   background-color: #000;
@@ -258,8 +367,9 @@ footer {
   text-align: center;
   padding: 2em 1em;
   margin-top: 4em;
+  width: 100%;
+  max-width: 100%;
 }
-
 /* Responsive */
 @media (max-width: 768px) {
   nav {
@@ -268,34 +378,27 @@ footer {
     gap: 1em;
     padding: 1em 0;
   }
-
   .nav-link {
     font-size: 1em;
     display: block;
   }
-
   header img {
     width: 150px;
   }
-
-  main {
+  .main-container {
     padding: 2em 1em;
   }
-
   .view-button,
   .contact-button {
     font-size: 1em;
     padding: 0.7em 1.5em;
   }
-
   .language-dropdown {
     top: 1em;
     right: 1em;
     transform: scale(0.9);
   }
-
-  .faqs h2 {
-    font-size: 1.5em;
-    color: #1E90FF !important;
+  .tour-image {
+    max-width: 100%;
   }
 }

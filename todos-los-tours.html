@@ -109,7 +109,6 @@
       max-width: 600px;
       width: 100%;
     }
-
     .tour-card {
       background-color: rgba(255, 255, 255, 0.9);
       padding: 1.5em;
@@ -120,21 +119,21 @@
       flex-direction: column;
       align-items: center;
     }
-
-    .tour-card p {
-      margin: 0.5em 0 0;
-      font-size: 1em;
-      text-align: center;
-    }
-
+   .tour-card p {
+  margin: 0.5em 0 0;
+  font-size: 0.9em;
+  text-align: center;
+  line-height: 1.5;
+  color: #444;
+}
     .view-button {
       margin-top: 1.5em;
       background-color: #1E90FF;
       color: white;
-      font-size: 1.1em;
+      font-size: 1em;
       padding: 0.8em 2em;
       border: none;
-      border-radius: 12px;
+      border-radius: 12%;
       cursor: pointer;
       text-decoration: none;
       display: inline-block;
@@ -200,30 +199,33 @@
     <a href="contacto.html" class="nav-link">Contacto</a>
   </nav>
 
-  <main>
-    <section class="page-intro">
-  <h1>Nuestros tours</h1>
+  <main class="main-container">
   <section class="page-intro">
- <p class="page-subtext">¿Qué te apetece explorar hoy?</p>
-</section>
-    <div class="tour-list">
-      <div class="tour-card">
-        <strong>Benidorm histórico</strong>
-        <p>Descubre los 5 puntos más emblemáticos de la ciudad con vistas inolvidables.</p>
-        <a href="benidorm.html" class="view-button">Ver tour</a>
-      </div>
-      <div class="tour-card">
-        <strong>Madrid esencial</strong>
-        <p>Desde el Palacio Real hasta el Retiro, pasando por el alma castiza de la capital.</p>
-        <a href="#" class="view-button">Ver tour</a>
-      </div>
-      <div class="tour-card">
-        <strong>Córdoba monumental</strong>
-        <p>Recorre la Mezquita, el Puente Romano y los patios más emblemáticos de Andalucía.</p>
-        <a href="#" class="view-button">Ver tour</a>
-      </div>
+    <h1>Nuestros tours</h1>
+    <p class="page-subtext">¿Qué te apetece explorar hoy?</p>
+  </section>
+
+  <div class="tour-list">
+    <div class="tour-card">
+      <h2>Benidorm histórico</h2>
+      <p>Descubre los 5 puntos más emblemáticos de la ciudad con vistas inolvidables.</p>
+      <a href="benidorm.html" class="view-button">Ver tour</a>
     </div>
-  </main>
+
+    <div class="tour-card">
+      <h2>Madrid esencial</h2>
+      <p>Desde el Palacio Real hasta el Retiro, pasando por el alma castiza de la capital.</p>
+      <a href="#" class="view-button">Ver tour</a>
+    </div>
+
+    <div class="tour-card">
+      <h2>Córdoba monumental</h2>
+      <p>Recorre la Mezquita, el Puente Romano y los patios más emblemáticos de Andalucía.</p>
+      <a href="#" class="view-button">Ver tour</a>
+    </div>
+  </div>
+</main>
+
 
   <footer>
     © 2025 GUIDIA · Todos los derechos reservados.
