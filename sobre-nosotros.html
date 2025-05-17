@@ -17,7 +17,7 @@
   </div>
 
   <header>
-    <img src="logo/logo-guidia.png" alt="Logo GUIDIA" />
+   <img src="logo/logo-guidia.png" alt="Logo GUIDIA" class="logo-hero" />
   </header>
 
   <nav>
@@ -31,40 +31,74 @@
   <main class="main-container">
     <section class="page-intro">
       <h1>Sobre GUIDIA</h1>
-      <p class="page-subtext">Te contamos quiénes somos y por qué creamos esta experiencia.</p>
-      <p>
-        Somos un equipo <strong>curioso</strong>, <strong>viajero</strong> y <strong>tecnológico</strong>. Esta es solo la primera parada de un <strong>recorrido</strong> que queremos compartir contigo.
-      </p>
-      <p>
-        Creamos <strong>experiencias digitales</strong> que conectan contigo, para que puedas disfrutar de cada ciudad con <strong>libertad</strong>, pero sin perder el <strong>contexto</strong>.
-      </p>
-      <p>
-        Detrás de <strong>GUIDIA</strong> hay personas <strong>creativas</strong>, con <strong>pasión por los viajes</strong> y la <strong>tecnología</strong>. Este es solo el comienzo de un <strong>viaje</strong> que acaba de empezar.
-      </p>
+      <p class="page-subtext">
+  Te contamos <span class="highlight">quiénes somos</span> y <span class="highlight">por qué creamos esta experiencia</span>. Spoiler: tiene que ver con viajar libre, pero bien acompañado 😉
+</p>
+
+    <p>
+  Somos un equipo <span class="highlight">curioso</span>, <span class="highlight">viajero</span> y <span class="highlight">tecnológico</span>. Esta es solo la primera parada de un recorrido que queremos compartir contigo.
+</p>
+<p>
+  Creamos <strong class="highlight">experiencias digitales</strong> que conectan contigo, para que puedas <em class="highlight">disfrutar cada ciudad con libertad</em>, pero sin perder el contexto.
+</p>
+<p>
+  Detrás de <span class="highlight">GUIDIA</span> hay <span class="highlight">personas creativas</span>, con <span class="highlight">pasión por los viajes</span> y la <span class="highlight">tecnología</span>. Este es solo el comienzo de un viaje que acaba de empezar.
+</p>
+
     </section>
 
     <section class="faqs">
-      <h2>Preguntas frecuentes</h2>
+  <h2>Preguntas frecuentes</h2>
 
-      <div class="faq-item">
-        <h3>¿Cómo funciona GUIDIA?</h3>
-        <p>Cuando llegas a una zona destacada de la ciudad, se activa un audio generado por inteligencia artificial que te explica qué estás viendo, sin que tengas que tocar nada.</p>
-      </div>
+  <div class="faq-item">
+    <button class="faq-question">¿Cómo funciona GUIDIA?</button>
+    <div class="faq-answer">
+      <p>Cuando llegas a una zona destacada de la ciudad, se activa un audio generado por inteligencia artificial que te explica qué estás viendo, sin que tengas que tocar nada.</p>
+    </div>
+  </div>
 
-      <div class="faq-item">
-        <h3>¿Necesito conexión a internet?</h3>
-        <p>Sí, para que los audios se activen automáticamente y puedas recibir contenido actualizado.</p>
-      </div>
+  <div class="faq-item">
+    <button class="faq-question">¿Necesito conexión a internet?</button>
+    <div class="faq-answer">
+      <p>Sí, para que los audios se activen automáticamente y puedas recibir contenido actualizado.</p>
+    </div>
+  </div>
 
-      <div class="faq-item">
-        <h3>¿Está disponible en cualquier ciudad?</h3>
-        <p>De momento estamos lanzando tours en ciudades seleccionadas, pero seguimos ampliando destinos cada mes.</p>
-      </div>
-    </section>
+  <div class="faq-item">
+    <button class="faq-question">¿Está disponible en cualquier ciudad?</button>
+    <div class="faq-answer">
+      <p>De momento estamos lanzando tours en ciudades seleccionadas, pero seguimos ampliando destinos cada mes.</p>
+    </div>
+  </div>
+</section>
+
   </main>
 <footer>
   © 2025 GUIDIA · Todos los derechos reservados.
 </footer>
+<script>
+  const questions = document.querySelectorAll(".faq-question");
+
+  questions.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const isActive = btn.classList.contains("active");
+
+      // Cierra todos los abiertos
+      questions.forEach((q) => {
+        q.classList.remove("active");
+        q.nextElementSibling.style.maxHeight = null;
+      });
+
+      // Si no estaba activo, lo abre
+      if (!isActive) {
+        btn.classList.add("active");
+        const answer = btn.nextElementSibling;
+        answer.style.maxHeight = answer.scrollHeight + "px";
+      }
+    });
+  });
+</script>
+
 </body>
 </html>
 

@@ -11,7 +11,6 @@ body {
   color: #000;
 }
 
-/* Fondo difuminado */
 body::before {
   content: "";
   position: fixed;
@@ -24,15 +23,19 @@ body::before {
   backdrop-filter: blur(1px);
 }
 
-/* Header */
-header {
-  text-align: center;
-  padding: 4em 1em 2em;
+.hero-benidorm-flat {
+  background-image: url('images/banner.png');
+  background-size: cover;
+  background-position: center;
+  height: 55vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-
-header img {
+.logo-hero {
   width: 200px;
   max-width: 80%;
+  z-index: 1;
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
 }
 
@@ -58,7 +61,7 @@ nav {
   color: #1E90FF;
 }
 
-/* Barra de idioma */
+/* Dropdown de idioma */
 .language-dropdown {
   position: absolute;
   top: 1.5em;
@@ -75,45 +78,7 @@ nav {
   font-family: 'Montserrat', sans-serif;
 }
 
-/* Intro GUIDIA */
-.intro-guidia {
-  text-align: center;
-  max-width: 700px;
-  margin: 2em auto;
-  padding: 0 1em;
-}
-
-.intro-guidia p {
-  font-size: 1.2em;
-  line-height: 1.6;
-  color: #333;
-}
-
-.intro-guidia h2 {
-  font-size: 1.8em;
-  margin-bottom: 0.5em;
-  color: #1E90FF;
-}
-.section-title {
-  font-size: 1.8em;
-  color: #1E90FF;
-  text-align: center;
-  margin-top: 2em;
-  margin-bottom: 1em;
-  position: relative;
-}
-
-.section-title::after {
-  content: "";
-  display: block;
-  width: 60px;
-  height: 3px;
-  background-color: #1E90FF;
-  margin: 0.5em auto 0;
-  border-radius: 3px;
-}
-
-/* MAIN CONTENEDOR PRINCIPAL */
+/* Contenido principal */
 .main-container {
   max-width: 900px;
   margin: 3em auto;
@@ -121,22 +86,21 @@ nav {
   background-color: rgba(255, 255, 255, 0.95);
   border-radius: 20px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    text-align: center;
+  text-align: center;
 }
+
 .page-intro {
-  font-size: 1.15em;
-  line-height: 1.7;
   background-color: rgba(255, 255, 255, 0.85);
   padding: 2em;
   border-radius: 16px;
   margin-bottom: 2em;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    text-align: center; /* ✨ Centra todo el contenido del bloque */
+  text-align: center;
 }
-/* Página Intro */
+
 .page-intro h1 {
-  font-size: 2em; /* O incluso 2.6em si lo quieres más impactante */
-  text-align: center; /* Asegura el centrado si hay override */
+  font-size: 2em;
+  text-align: center;
   margin-bottom: 0.6em;
   color: #1E90FF;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
@@ -153,10 +117,6 @@ nav {
   margin: 0.5em auto 0;
   border-radius: 3px;
 }
-.page-intro strong {
-  color: #1E90FF !important;
-  font-weight: 600;
-}
 
 .page-subtext {
   font-size: 1.2em;
@@ -169,64 +129,9 @@ nav {
   display: inline-block;
   margin-top: 1em;
   letter-spacing: 0.3px;
-  text-align: center;
 }
 
-/* FAQS */
-.faqs {
-  background-color: rgba(255, 255, 255, 0.85);
-  padding: 2em;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-  text-align: center;
-}
-
-.faqs h2 {
-  color: #1E90FF;
-  font-size: 2em;
-  margin-bottom: 1em;
-  text-align: center;
-  position: relative;
-}
-
-.faqs h2::after {
-  content: "";
-  display: block;
-  width: 60px;
-  height: 3px;
-  background-color: #1E90FF;
-  margin: 0.5em auto 0;
-  border-radius: 3px;
-}
-.faq-item h3 {
-  color: #333;
-  font-size: 1.2em;
-  margin-bottom: 0.4em;
-}
-
-.faq-item p {
-  color: #555;
-  font-size: 1.15em;
-  line-height: 1.7;
-}
-
-/* ANIMACIONES */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.intro-guidia {
-  animation: fadeIn 1s ease;
-}
-
-/* Tarjetas de parada */
+/* Paradas */
 .tour-stop {
   background-size: cover;
   background-position: center;
@@ -235,20 +140,26 @@ nav {
   color: white;
   margin-bottom: 2em;
   position: relative;
+  min-height: 300px; /* 💡 Ajustable según necesidad */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
 .tour-stop .content-block {
   background-color: rgba(0, 0, 0, 0.5);
   padding: 1.5em;
   border-radius: 12px;
 }
+
 .tour-stop h2 {
-  margin-top: 0;
   font-size: 1.6rem;
+  margin-top: 0;
 }
 
 .tour-stop p {
-  margin-bottom: 10px;
   font-size: 1em;
+  margin-bottom: 10px;
 }
 
 .tour-image {
@@ -257,86 +168,12 @@ nav {
   margin: 10px auto 0;
   border-radius: 8px;
   display: block;
-  border: 4px solid #fff; /* 🟦 Borde blanco elegante */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* 🌑 Sombra suave */
+  border: 4px solid #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-.tour-list {
-  display: flex;
-  flex-direction: column;
-  gap: 2em;
-  width: 100%;
-  margin: 2em 0;
-}
-.tour-card {
-  background-color: rgba(255, 255, 255, 0.9);
-  padding: 1.5em;
-  border-radius: 12px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-  font-size: 1.1em;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-.tour-card h2 {
-  color: #1E90FF;
-  font-weight: 600;
-  margin-bottom: 0.8em;
-  position: relative;
-}
-
-.tour-card h2::after {
-  content: "";
-  display: block;
-  width: 40px;
-  height: 3px;
-  background-color: #1E90FF;
-  margin: 0.5em auto 0;
-  border-radius: 3px;
-}
-
-
-/* Botón de descarga */
-.tour-action {
-  text-align: center;
-  margin: 40px 0;
-}
-.tour-action button {
-  background-color: #1E90FF;
-  color: white;
-  border: none;
-  padding: 15px 30px;
-  border-radius: 8px;
-  font-size: 1rem;
-  cursor: pointer;
-}
-/* Reseñas */
-.review-form, .tour-reviews {
-  margin-top: 40px;
-}
-.review-form form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-.review-form input,
-.review-form textarea {
-  padding: 10px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  font-family: 'Montserrat', sans-serif;
-}
-.review-form button {
-  align-self: flex-start;
-  background-color: #1E90FF;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-}
-.view-button {
+/* Botón */
+.view-button, .tour-action button {
   margin-top: 1.5em;
   background-color: #1E90FF;
   color: white;
@@ -350,8 +187,44 @@ nav {
   transition: background-color 0.3s ease;
 }
 
-.view-button:hover {
+.view-button:hover,
+.tour-action button:hover {
   background-color: #186bb5;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(24, 107, 181, 0.4);
+}
+
+.tour-action {
+  text-align: center;
+  margin: 40px 0;
+}
+
+/* Reseñas */
+.review-form, .tour-reviews {
+  margin-top: 40px;
+}
+
+.review-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.review-form input,
+.review-form textarea {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.review-form button {
+  background-color: #1E90FF;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
 }
 
 .review {
@@ -360,6 +233,7 @@ nav {
   border-radius: 8px;
   margin-bottom: 10px;
 }
+
 /* Footer */
 footer {
   background-color: #000;
@@ -370,6 +244,7 @@ footer {
   width: 100%;
   max-width: 100%;
 }
+
 /* Responsive */
 @media (max-width: 768px) {
   nav {
@@ -378,27 +253,205 @@ footer {
     gap: 1em;
     padding: 1em 0;
   }
+
   .nav-link {
     font-size: 1em;
     display: block;
   }
-  header img {
+
+  .logo-hero {
     width: 150px;
   }
+
   .main-container {
     padding: 2em 1em;
   }
-  .view-button,
-  .contact-button {
-    font-size: 1em;
-    padding: 0.7em 1.5em;
-  }
+
   .language-dropdown {
     top: 1em;
     right: 1em;
     transform: scale(0.9);
   }
+
   .tour-image {
     max-width: 100%;
   }
+}
+/* --- NUEVOS ESTILOS PARA index.html --- */
+
+/* Texto destacado en azul */
+.highlight {
+  color: #1E90FF;
+  font-weight: 600;
+}
+
+/* Animación para secciones como intro */
+.intro-guidia {
+  animation: fadeInUp 1s ease-in-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Ajuste logo centrado */
+header {
+  text-align: center;
+  margin: 2em 0 1em;
+}
+
+.logo-hero {
+  width: 200px;
+  max-width: 80%;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+/* Estructura de los tours destacados */
+.tour-card {
+  background-size: cover;
+  background-position: center;
+  padding: 2em;
+  border-radius: 16px;
+  color: white;
+  margin-bottom: 2em;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.content-overlay {
+  background-color: rgba(0, 0, 0, 0.45);
+  padding: 1.5em;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.content-overlay h2,
+.content-overlay p {
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+.content-overlay h2 {
+  font-size: 1.5em;
+  margin-bottom: 0.5em;
+  color: #1E90FF;
+  position: relative;
+}
+
+.content-overlay h2::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 3px;
+  background-color: #1E90FF;
+  margin: 0.5em auto 0;
+  border-radius: 3px;
+}
+
+.content-overlay p {
+  font-size: 1em;
+}
+.faqs {
+  max-width: 800px;
+  margin: 4em auto;
+  padding: 0 1em;
+  text-align: left;
+}
+
+.faqs h2 {
+  text-align: center;
+  font-size: 2em;
+  color: #1E90FF;
+  margin-bottom: 2em;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.faqs h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: #1E90FF;
+  margin: 0.5em auto 0;
+  border-radius: 3px;
+}
+
+.faq-item {
+  margin-bottom: 1em;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.faq-question {
+  width: 100%;
+  text-align: left;
+  padding: 1em 1.5em;
+  background: none;
+  border: none;
+  font-size: 1.1em;
+  font-weight: 600;
+  color: #1E90FF;
+  cursor: pointer;
+  position: relative;
+  transition: background-color 0.2s;
+}
+
+.faq-question::after {
+  content: "+";
+  position: absolute;
+  right: 1.5em;
+  font-size: 1.3em;
+  transition: transform 0.3s;
+}
+
+.faq-question.active::after {
+  content: "−";
+}
+
+.faq-question:hover {
+  background-color: rgba(30, 144, 255, 0.05);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+  padding: 0 1.5em;
+}
+
+.faq-answer p {
+  margin: 1em 0;
+  color: #444;
+  line-height: 1.6;
+}
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2em;
+  margin-top: 2em;
+  text-align: left;
+}
+
+.contact-form label {
+  font-weight: 600;
+  color: #1E90FF;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 0.8em 1em;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1em;
+  resize: vertical;
 }

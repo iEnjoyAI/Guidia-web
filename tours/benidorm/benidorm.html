@@ -5,10 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Benidorm - GUIDIA</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="../../style.css" />
 </head>
 <body>
 
+  <!-- 🌐 Selección de idioma -->
   <div class="language-dropdown">
     <select name="language" id="language">
       <option value="es" selected>🇪🇸 Español</option>
@@ -16,74 +17,76 @@
     </select>
   </div>
 
+  <!-- 🟦 Logo -->
   <header>
-    <img src="logo/logo-guidia.png" alt="Logo GUIDIA" />
+    <img src="../../logo/logo-guidia.png" alt="Logo GUIDIA" class="logo-hero" />
   </header>
 
+  <!-- 🔗 Menú de navegación -->
   <nav>
-    <a href="index.html" class="nav-link">Inicio</a>
-    <a href="todos-los-tours.html" class="nav-link">Todos los tours</a>
-    <a href="proximos-tours.html" class="nav-link">Próximos tours</a>
-    <a href="sobre-nosotros.html" class="nav-link">Sobre nosotros</a>
-    <a href="contacto.html" class="nav-link">Contacto</a>
+    <a href="../../index.html" class="nav-link">Inicio</a>
+    <a href="../../todos-los-tours.html" class="nav-link">Todos los tours</a>
+    <a href="../../proximos-tours.html" class="nav-link">Próximos tours</a>
+    <a href="../../sobre-nosotros.html" class="nav-link">Sobre GUIDIA</a>
+    <a href="../../contacto.html" class="nav-link">Contacto</a>
   </nav>
 
+  <!-- 🧭 Contenido principal -->
   <main class="main-container">
     <section class="page-intro">
       <h1>Benidorm</h1>
-      <p class="page-subtext">¡Aquí están las cinco paradas a descubrir!</p>
+      <p class="page-subtext">
+  <span class="highlight">Benidorm</span> es mucho más que playa: historia, miradores, gastronomía y rincones con encanto. Descúbrela a tu ritmo con nuestra <strong class="highlight">audioguía inteligente</strong> y <span class="highlight">vive la ciudad como nunca antes</span>.
+</p>
     </section>
 
     <section class="tour-stops">
-      <section class="tour-stop" style="background-image: url('tours/benidorm/castillo.jpg');">
+      <section class="tour-stop" style="background-image: url('images/Castillo.png');">
         <div class="content-block">
           <h2>Castillo de Benidorm</h2>
           <p>Un icónico balcón entre acantilados que separa las dos playas y ofrece una postal perfecta del mar.</p>
-          <img src="tours/benidorm/Castillo.png" alt="Vista del Castillo de Benidorm desde el mar al atardecer" class="tour-image" />
         </div>
       </section>
 
-      <section class="tour-stop" style="background-image: url('tours/benidorm/isla.jpg');">
+      <section class="tour-stop" style="background-image: url('images/Isla.png');">
         <div class="content-block">
           <h2>Isla de Benidorm</h2>
           <p>Visible desde la playa, esta isla misteriosa está rodeada de leyendas y es un paraíso para el snorkel.</p>
-          <img src="tours/benidorm/Isla.png" alt="Isla de Benidorm vista aérea" class="tour-image" />
         </div>
       </section>
 
-      <section class="tour-stop" style="background-image: url('tours/benidorm/iglesia.jpg');">
+      <section class="tour-stop" style="background-image: url('images/Iglesia.png');">
         <div class="content-block">
           <h2>Iglesia de San Jaime y Santa Ana</h2>
           <p>Una joya blanca y azul del siglo XVIII en lo alto del casco antiguo, con vistas al mar y encanto tradicional.</p>
-          <img src="tours/benidorm/Iglesia.png" alt="Iglesia de San Jaime y Santa Ana" class="tour-image" />
         </div>
       </section>
 
-      <section class="tour-stop" style="background-image: url('tours/benidorm/playa.jpg');">
+      <section class="tour-stop" style="background-image: url('images/Paseo.png');">
         <div class="content-block">
           <h2>Playa de Poniente</h2>
           <p>Relájate frente al mar en uno de los paseos más modernos y premiados de Europa.</p>
-          <img src="tours/benidorm/Paseo.png" alt="Paseo de Poniente" class="tour-image" />
         </div>
       </section>
 
-      <section class="tour-stop" style="background-image: url('tours/benidorm/tossal.jpg');">
+      <section class="tour-stop" style="background-image: url('images/Tossal.png');">
         <div class="content-block">
           <h2>Tossal de la Cala</h2>
           <p>Un mirador tranquilo con restos romanos y vistas espectaculares de la bahía de Benidorm.</p>
-          <img src="tours/benidorm/Tossal.png" alt="Tossal de la Cala con la playa de la cala de fondo" class="tour-image" />
         </div>
       </section>
     </section>
 
+    <!-- 📥 Botón de descarga -->
     <div class="tour-action">
-      <button>Descargar tour</button>
+      <a href="#" class="view-button">Descargar tour</a>
     </div>
 
+    <!-- 🗣️ Reseñas -->
     <section class="review-form">
       <h3>¿Has hecho este tour? ¡Déjanos tu reseña!</h3>
       <form>
-        <input type="text" name="nombre" placeholder="Tu nombre" required>
+        <input type="text" name="nombre" placeholder="Tu nombre" required />
         <textarea name="comentario" placeholder="Escribe tu reseña aquí..." rows="4" required></textarea>
         <button type="submit">Enviar reseña</button>
       </form>
@@ -100,9 +103,10 @@
     </section>
   </main>
 
+  <!-- ⚫ Footer -->
   <footer>
     © 2025 GUIDIA · Todos los derechos reservados.
   </footer>
+
 </body>
 </html>
-

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tour por Altea - GUIDIA</title>
+  <meta name="description" content="Explora Altea con una audioguía activada por IA. Disfruta de sus calles blancas, miradores y cúpulas azules sin tocar el móvil.">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../style.css" />
+</head>
+<body>
+
+  <div class="language-dropdown">
+    <select name="language" id="language">
+      <option value="es" selected>🇪🇸 Español</option>
+      <option value="en">🇬🇧 English</option>
+    </select>
+  </div>
+
+  <header>
+    <img src="../../logo/logo-guidia.png" alt="Logo GUIDIA" />
+  </header>
+
+  <nav>
+    <a href="../../index.html" class="nav-link">Inicio</a>
+    <a href="../../todos-los-tours.html" class="nav-link">Todos los tours</a>
+    <a href="../../proximos-tours.html" class="nav-link">Próximos tours</a>
+    <a href="../../sobre-nosotros.html" class="nav-link">Sobre GUIDIA</a>
+    <a href="../../contacto.html" class="nav-link">Contacto</a>
+  </nav>
+
+  <!-- ✅ Banner hero visual -->
+  <section class="banner-tour" style="background-image: url('images/banner.jpg');">
+    <div class="banner-content">
+      <h1>Explora Altea a tu ritmo</h1>
+      <p>Una ruta guiada por sus rincones más bonitos, activada por inteligencia artificial.</p>
+    </div>
+  </section>
+
+  <main class="main-container">
+    <section class="page-intro">
+      <h1>Altea</h1>
+      <p class="page-subtext">Un recorrido por sus vistas, historia y esencia mediterránea.</p>
+    </section>
+
+    <section class="tour-stops">
+      <section class="tour-stop" style="background-image: url('images/parada1.jpg');">
+        <div class="content-block">
+          <h2>Mirador panorámico</h2>
+          <p>Disfruta de las mejores vistas al mar y al casco antiguo de Altea desde este punto emblemático.</p>
+          <img src="images/parada1.png" alt="Vistas desde el mirador de Altea" class="tour-image" />
+        </div>
+      </section>
+
+      <section class="tour-stop" style="background-image: url('images/parada2.jpg');">
+        <div class="content-block">
+          <h2>Calles blancas del casco antiguo</h2>
+          <p>Recorre las callejuelas empedradas, llenas de encanto y flores, donde cada esquina es una postal.</p>
+          <img src="images/parada2.png" alt="Casco antiguo de Altea" class="tour-image" />
+        </div>
+      </section>
+
+      <section class="tour-stop" style="background-image: url('images/parada3.jpg');">
+        <div class="content-block">
+          <h2>Iglesia de Nuestra Señora del Consuelo</h2>
+          <p>El símbolo de Altea, con sus cúpulas azules, arte mediterráneo y vistas espectaculares.</p>
+          <img src="images/parada3.png" alt="Iglesia de Altea con cúpula azul" class="tour-image" />
+        </div>
+      </section>
+
+      <section class="tour-stop" style="background-image: url('images/parada4.jpg');">
+        <div class="content-block">
+          <h2>Paseo marítimo</h2>
+          <p>Relájate junto al mar y disfruta del ambiente tranquilo de su paseo, perfecto al atardecer.</p>
+          <img src="images/parada4.png" alt="Paseo marítimo de Altea" class="tour-image" />
+        </div>
+      </section>
+
+      <section class="tour-stop" style="background-image: url('images/parada5.jpg');">
+        <div class="content-block">
+          <h2>Playa de la Roda</h2>
+          <p>Una playa urbana de aguas cristalinas donde puedes terminar el recorrido con un buen baño.</p>
+          <img src="images/parada5.png" alt="Playa de la Roda en Altea" class="tour-image" />
+        </div>
+      </section>
+    </section>
+
+    <div class="tour-action">
+      <button>Descargar tour</button>
+    </div>
+
+    <section class="review-form">
+      <h3>¿Has hecho este tour? ¡Déjanos tu reseña!</h3>
+      <form>
+        <input type="text" name="nombre" placeholder="Tu nombre" required>
+        <textarea name="comentario" placeholder="Escribe tu reseña aquí..." rows="4" required></textarea>
+        <button type="submit">Enviar reseña</button>
+      </form>
+    </section>
+
+    <section class="tour-reviews">
+      <h3>Lo que opinan otros viajeros</h3>
+      <div class="review">
+        <p><strong>Sandra T. ⭐⭐⭐⭐⭐</strong><br>La ruta por el casco antiguo es una maravilla. Me encantó cómo la app me contaba todo justo cuando llegaba.</p>
+      </div>
+      <div class="review">
+        <p><strong>Nacho M. ⭐⭐⭐⭐☆</strong><br>El audio es muy claro y fácil de seguir. Ideal para no depender de guías en grupo.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © 2025 GUIDIA · Todos los derechos reservados.
+  </footer>
+
+</body>
+</html>
