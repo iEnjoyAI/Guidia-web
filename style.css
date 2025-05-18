@@ -455,3 +455,12 @@ header {
   font-size: 1em;
   resize: vertical;
 }
+.mapa-tour {
+  margin-top: 3em;
+  text-align: center;
+}
+
+.mapa-tour h3 {
+  color: #1E90FF;
+  margin-bottom: 1em;
+}
