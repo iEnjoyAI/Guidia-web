@@ -6,6 +6,105 @@
   <title>Benidorm - GUIDIA</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../../style.css" />
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const languageSelect = document.getElementById("language");
+      const translations = {
+        es: {
+          title: "Benidorm",
+          intro: "<span class='highlight'>Benidorm</span> es mucho más que playa: historia, miradores, gastronomía y rincones con encanto. Descúbrela a tu ritmo con nuestra <strong class='highlight'>audioguía inteligente</strong> y <span class='highlight'>vive la ciudad como nunca antes</span>.",
+          stop1: "Parque de l’Aigüera",
+          desc1: "Un <span class='highlight'>pulmón verde</span> que atraviesa el centro urbano, diseñado por el reconocido arquitecto <span class='highlight'>Ricardo Bofill</span>. Su estilo <span class='highlight'>neoclásico</span> y sus <span class='highlight'>anfiteatros al aire libre</span> hacen de este lugar un descanso con personalidad propia en plena ciudad.",
+          stop2: "Iglesia de San Jaime y Santa Ana",
+          desc2: "Una joya blanca y azul del <span class='highlight'>siglo XVIII</span> en lo alto del <span class='highlight'>casco antiguo</span>, con vistas al mar y encanto tradicional.",
+          stop3: "Castillo de Benidorm",
+          desc3: "Este emblemático balcón natural separa las playas de Levante y Poniente. Desde aquí, disfrutarás de una de las vistas más espectaculares de toda la ciudad, con el mar a tus pies y el casco antiguo a tu espalda. Un lugar perfecto para detenerse, respirar y conectar con la <span class='highlight'>historia de Benidorm</span>.",
+          stop4: "Playa de Poniente",
+          desc4: "Relájate frente al mar en uno de los paseos marítimos más premiados de Europa. A lo lejos, sobre el horizonte, destaca la <span class='highlight'>Isla de Benidorm</span>, visible desde casi cualquier punto de la costa. Aunque no visitamos la isla en esta ruta, su presencia forma parte del encanto del paisaje.",
+          stop5: "Tossal de la Cala",
+          desc5: "Un mirador tranquilo con restos romanos que cuentan la historia más antigua de la ciudad. Desde aquí, las <span class='highlight'>vistas de la bahía de Benidorm</span> son únicas, y el ambiente invita a una pausa entre mar y montaña.",
+          stop6: "La Cruz de Benidorm <span style='font-weight:400; font-style:italic;'>(parada opcional)</span>",
+          desc6: "En lo alto de Sierra Helada, esta cruz de hierro preside la ciudad desde hace décadas. Aquí encontrarás uno de los <span class='highlight'>miradores más impresionantes del Mediterráneo</span>. Una experiencia recomendada solo si tienes tiempo y ganas de disfrutar Benidorm desde las alturas.<br><span style='font-style: italic; font-size: 0.9em;'>*Este punto aparece marcado en <strong style='color: orange;'>naranja</strong> en el mapa, pero no forma parte del recorrido principal.</span>",
+          maptitle: "Recorre la ruta en el mapa",
+          mapbutton: "Iniciar recorrido en Google Maps desde l’Aigüera",
+          reviewtitle: "¿Has hecho este tour? ¡Déjanos tu reseña!",
+          nameplaceholder: "Tu nombre",
+          commentplaceholder: "Escribe tu reseña aquí...",
+          send: "Enviar reseña",
+          otherssay: "Lo que opinan otros viajeros",
+          review1: "Muy útil. Nos encantó el punto del Tossal, no lo conocíamos y las vistas son brutales.",
+          review2: "Audio claro y bien explicado. La parada en la iglesia fue mi favorita.",
+          nav: ["Inicio", "Todos los tours", "Próximos tours", "Sobre GUIDIA", "Contacto"],
+          download: "Descargar tour",
+        },
+        en: {
+          title: "Benidorm",
+          intro: "<span class='highlight'>Benidorm</span> is much more than just beaches: history, viewpoints, gastronomy and charming corners. Discover it at your own pace with our <strong class='highlight'>smart audio guide</strong> and <span class='highlight'>experience the city like never before</span>.",
+          stop1: "Parque de l’Aigüera",
+          desc1: "A <span class='highlight'>green corridor</span> that runs through the city center, designed by the renowned architect <span class='highlight'>Ricardo Bofill</span>. Its <span class='highlight'>neoclassical style</span> and <span class='highlight'>open-air amphitheaters</span> make it a unique place to pause and enjoy urban nature.",
+          stop2: "Church of San Jaime and Santa Ana",
+          desc2: "A white and blue jewel from the <span class='highlight'>18th century</span>, perched on top of the <span class='highlight'>old town</span>, offering sea views and traditional charm.",
+          stop3: "Benidorm Castle",
+          desc3: "This iconic natural balcony separates the Levante and Poniente beaches. From here, you can enjoy one of the most spectacular views of the entire city, with the sea at your feet and the old town behind you. A perfect place to stop, breathe, and connect with the <span class='highlight'>history of Benidorm</span>.",
+          stop4: "Poniente Beach",
+          desc4: "Relax by the sea along one of the most awarded promenades in Europe. The <span class='highlight'>Benidorm Island</span> stands out on the horizon, visible from almost any coastal spot. While it’s not part of this walking route, it adds charm to the landscape.",
+          stop5: "Tossal de la Cala",
+          desc5: "A peaceful viewpoint with Roman ruins that tell the oldest stories of the city. From here, the <span class='highlight'>views of Benidorm’s bay</span> are unmatched, and the atmosphere invites you to pause between sea and mountain.",
+          stop6: "Benidorm Cross <span style='font-weight:400; font-style:italic;'>(optional stop)</span>",
+          desc6: "At the top of Sierra Helada, this iron cross has watched over the city for decades. From here, you’ll find one of the <span class='highlight'>most breathtaking viewpoints on the Mediterranean coast</span>. A highly recommended experience for those with extra time and a desire to see Benidorm from above.<br><span style='font-style: italic; font-size: 0.9em;'>*This point appears in <strong style='color: orange;'>orange</strong> on the map, but is not part of the main route.</span>",
+          maptitle: "Follow the route on the map",
+          mapbutton: "Start tour in Google Maps from l’Aigüera",
+          reviewtitle: "Have you done this tour? Leave us your review!",
+          nameplaceholder: "Your name",
+          commentplaceholder: "Write your review here...",
+          send: "Submit review",
+          otherssay: "What other travelers say",
+          review1: "Super helpful. We loved the Tossal stop — we didn’t know it and the views were incredible.",
+          review2: "Clear audio and well explained. The church stop was my favorite.",
+          nav: ["Home", "All Tours", "Upcoming Tours", "About GUIDIA", "Contact"],
+          download: "Download tour",
+        }
+      };
+
+      function applyTranslations(lang) {
+        const t = translations[lang];
+        document.querySelector(".page-intro h1").innerText = t.title;
+        document.querySelector(".page-subtext").innerHTML = t.intro;
+        document.querySelectorAll(".tour-stop")[0].querySelector("h2").innerHTML = t.stop1;
+        document.querySelectorAll(".tour-stop")[0].querySelector("p").innerHTML = t.desc1;
+        document.querySelectorAll(".tour-stop")[1].querySelector("h2").innerHTML = t.stop2;
+        document.querySelectorAll(".tour-stop")[1].querySelector("p").innerHTML = t.desc2;
+        document.querySelectorAll(".tour-stop")[2].querySelector("h2").innerHTML = t.stop3;
+        document.querySelectorAll(".tour-stop")[2].querySelector("p").innerHTML = t.desc3;
+        document.querySelectorAll(".tour-stop")[3].querySelector("h2").innerHTML = t.stop4;
+        document.querySelectorAll(".tour-stop")[3].querySelector("p").innerHTML = t.desc4;
+        document.querySelectorAll(".tour-stop")[4].querySelector("h2").innerHTML = t.stop5;
+        document.querySelectorAll(".tour-stop")[4].querySelector("p").innerHTML = t.desc5;
+        document.querySelectorAll(".tour-stop")[5].querySelector("h2").innerHTML = t.stop6;
+        document.querySelectorAll(".tour-stop")[5].querySelector(".content-block").innerHTML = `<h2>${t.stop6}</h2><p>${t.desc6}</p>`;
+        document.querySelector(".mapa-tour h3").innerText = t.maptitle;
+        document.querySelector(".mapa-tour a").innerText = t.mapbutton;
+        document.querySelector(".review-form h3").innerText = t.reviewtitle;
+        document.querySelector(".review-form input").placeholder = t.nameplaceholder;
+        document.querySelector(".review-form textarea").placeholder = t.commentplaceholder;
+        document.querySelector(".review-form button").innerText = t.send;
+        document.querySelector(".tour-reviews h3").innerText = t.otherssay;
+        document.querySelectorAll(".tour-reviews .review p")[0].innerHTML = `<strong>Lucía M. ⭐⭐⭐⭐⭐</strong><br>${t.review1}`;
+        document.querySelectorAll(".tour-reviews .review p")[1].innerHTML = `<strong>Raúl G. ⭐⭐⭐⭐☆</strong><br>${t.review2}`;
+      // Navegación
+        document.querySelectorAll("nav .nav-link").forEach((link, i) => link.textContent = t.nav[i]);
+        // Botón de descarga
+        document.querySelector(".tour-action a").textContent = t.download;
+        // ...resto del código de traducción...
+      }
+
+      languageSelect.addEventListener("change", () => {
+        applyTranslations(languageSelect.value);
+      });
+
+      applyTranslations(languageSelect.value);
+    });
+  </script>
 </head>
 <body>
 
@@ -50,7 +149,16 @@
   </div>
 </section>
 
-   <section class="tour-stop" style="background-image: url('images/Castillo.png');">
+      <section class="tour-stop" style="background-image: url('images/Iglesia.png');">
+        <div class="content-block">
+          <h2>Iglesia de San Jaime y Santa Ana</h2>
+          <p>
+  Una joya blanca y azul del <span class="highlight">siglo XVIII</span> en lo alto del <span class="highlight">casco antiguo</span>, con vistas al mar y encanto tradicional.
+</p>
+        </div>
+      </section>
+
+         <section class="tour-stop" style="background-image: url('images/Castillo.png');">
   <div class="content-block">
     <h2>Castillo de Benidorm</h2>
     <p>
@@ -60,15 +168,6 @@
 </p>
   </div>
 </section>
-
-      <section class="tour-stop" style="background-image: url('images/Iglesia.png');">
-        <div class="content-block">
-          <h2>Iglesia de San Jaime y Santa Ana</h2>
-          <p>
-  Una joya blanca y azul del <span class="highlight">siglo XVIII</span> en lo alto del <span class="highlight">casco antiguo</span>, con vistas al mar y encanto tradicional.
-</p>
-        </div>
-      </section>
 
       <section class="tour-stop" style="background-image: url('images/Paseo.png');">
   <div class="content-block">
@@ -96,9 +195,13 @@
     <h2>La Cruz de Benidorm <span style="font-weight:400; font-style:italic;">(parada opcional)</span></h2>
     <p>
       En lo alto de Sierra Helada, esta cruz de hierro preside la ciudad desde hace décadas. 
-      El camino hasta aquí no forma parte del recorrido oficial, pero si decides continuar, 
-      encontrarás uno de los <span class="highlight">miradores más impresionantes del Mediterráneo</span>.
+ Aquí encontrarás uno de los <span class="highlight">miradores más impresionantes del Mediterráneo</span>.
       Una experiencia recomendada solo si tienes tiempo y ganas de disfrutar Benidorm desde las alturas.
+
+      <p style="font-style: italic; font-size: 0.9em;">
+  *Este punto aparece marcado en <strong style="color: orange;">naranja</strong> en el mapa, pero no forma parte del recorrido principal.
+</p>
+
     </p>
   </div>
 </section>
@@ -109,19 +212,23 @@
     </div>
     <section class="mapa-tour">
   <h3>Recorre la ruta en el mapa</h3>
-  <iframe 
-    src="https://www.google.com/maps/d/embed?mid=12FAH3H7sNbtO4H2g1KDjyyCseJt9agM" 
-    width="100%" 
-    height="480" 
-    style="border:0;" 
-    allowfullscreen="" 
-    loading="lazy">
-  </iframe>
-  <a href="https://www.google.com/maps/dir/?api=1&destination=Castillo+de+Benidorm" 
-   class="view-button" 
-   target="_blank">
-   Abrir en Google Maps
+<iframe 
+  src="https://www.google.com/maps/d/embed?mid=12FAH3H7sNbtO4H2g1KDjyyCseJt9agM&ehbc=2E312F" 
+  width="100%" 
+  height="480" 
+  style="border:0;" 
+  allowfullscreen="" 
+  loading="lazy">
+</iframe>
+
+ <a 
+  href="https://www.google.com/maps/dir/Auditori+Julio+Iglesias,+Calle+Primavera,+Benidorm/Iglesia+de+San+Jaime+y+Santa+Ana,+Pla%C3%A7a+de+Castelar,+1,+03501+Benidorm,+Alicante/Balc%C3%B3n+del+Mediterr%C3%A1neo,+Plaza+de+Castelar,+Benidorm/38.537104,-0.1383067/Tossal+de+la+Cala,+C%2F+de+la+Ermita,+1,+03502+Benidorm,+Alicante/@38.5343577,-0.1335,783m/data=!3m1!1e3!4m32!4m31!1m5!1m1!1s0xd6204e9fbc7503d:0xee0da5700982c8b7!2m2!1d-0.130348!2d38.54222!1m5!1m1!1s0xd6204dd85674793:0x1b71e2311e760a1f!2m2!1d-0.1309622!2d38.534374!1m10!1m1!1s0xd620587bfc6961b:0x3e44c99080bc10!2m2!1d-0.1314691!2d38.533209!3m4!1m2!1d-0.1323308!2d38.534774!3s0xd6204dda763cfc9:0x9ad4006ba28772ac!1m0!1m5!1m1!1s0xd621ad8e9b8146d:0x69dd037f4e30ef95!2m2!1d-0.1615605!2d38.5252736!3e2?hl=es&entry=ttu" 
+  class="view-button" 
+  target="_blank"
+>
+  Iniciar recorrido en Google Maps desde l’Aigüera
 </a>
+
 
 </section>
 
