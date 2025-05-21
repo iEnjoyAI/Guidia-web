@@ -6,6 +6,75 @@
   <title>GUIDIA - Próximos tours</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+
+  <script>
+
+    document.addEventListener("DOMContentLoaded", function () {
+      const languageSelect = document.getElementById("language");
+
+      const translations = {
+        es: {
+          title: "Próximos tours",
+          subtitle: "Rutas exclusivas que pronto estarán disponibles. Sé el primero en vivir nuevas experiencias con nuestras <strong class='highlight'>audioguías inteligentes</strong>. <em class='highlight'>Explora</em>, <em class='highlight'>escucha</em> y <em class='highlight'>descubre</em> con tu móvil, <span class='highlight'>sin horarios ni grupos</span>.",
+          tours: [
+            {
+              name: "Castillo de Santa Bárbara",
+              desc: "Explora esta imponente fortaleza con vistas panorámicas a la ciudad de Alicante."
+            },
+            {
+              name: "Casco antiguo de Altea",
+              desc: "Calles blancas, cúpulas azules y el encanto de un pueblo costero con historia."
+            },
+            {
+              name: "Peñón de Ifach - Calpe",
+              desc: "Una ruta entre mar y montaña que te llevará a lo alto de este icono del Mediterráneo."
+            }
+          ],
+          nav: ["Inicio", "Todos los tours", "Próximos tours", "Sobre GUIDIA", "Contacto"]
+        },
+        en: {
+          title: "Upcoming tours",
+          subtitle: "Exclusive routes coming soon. Be the first to experience new adventures with our <strong class='highlight'>smart audio guides</strong>. <em class='highlight'>Explore</em>, <em class='highlight'>listen</em>, and <em class='highlight'>discover</em> with your phone — <span class='highlight'>no groups or schedules</span>.",
+          tours: [
+            {
+              name: "Santa Bárbara Castle",
+              desc: "Explore this impressive fortress with panoramic views over the city of Alicante."
+            },
+            {
+              name: "Altea Old Town",
+              desc: "Whitewashed streets, blue domes, and the charm of a coastal village full of history."
+            },
+            {
+              name: "Peñón de Ifach - Calpe",
+              desc: "A walk between sea and mountains that takes you to the top of this Mediterranean icon."
+            }
+          ],
+          nav: ["Home", "All Tours", "Upcoming Tours", "About GUIDIA", "Contact"]
+        }
+      };
+
+      function applyTranslations(lang) {
+        const t = translations[lang];
+        document.querySelector(".page-intro h1").innerText = t.title;
+        document.querySelector(".page-subtext").innerHTML = t.subtitle;
+
+        document.querySelectorAll(".tour-card").forEach((card, i) => {
+          card.querySelector("h2").innerText = t.tours[i].name;
+          card.querySelector("p").innerText = t.tours[i].desc;
+        });
+
+        document.querySelectorAll("nav .nav-link").forEach((link, i) => {
+          link.textContent = t.nav[i];
+        });
+      }
+
+      languageSelect.addEventListener("change", () => {
+        applyTranslations(languageSelect.value);
+      });
+
+      applyTranslations(languageSelect.value);
+    });
+  </script>
 </head>
 <body>
 
@@ -31,11 +100,9 @@
   <main class="main-container">
     <section class="page-intro">
       <h1>Próximos tours</h1>
-  <p class="page-subtext">
-  Rutas exclusivas que pronto estarán disponibles. Sé el primero en vivir nuevas experiencias con nuestras <strong class="highlight">audioguías inteligentes</strong>. 
-  <em class="highlight">Explora</em>, <em class="highlight">escucha</em> y <em class="highlight">descubre</em> con tu móvil, <span class="highlight">sin horarios ni grupos</span>.
-</p>
-
+      <p class="page-subtext">
+        Rutas exclusivas que pronto estarán disponibles. Sé el primero en vivir nuevas experiencias con nuestras audioguías inteligentes. Explora, escucha y descubre con tu móvil, sin horarios ni grupos.<!-- Este texto se traduce dinámicamente -->
+      </p>
     </section>
 
     <div class="tour-card">
@@ -66,4 +133,3 @@
 
 </body>
 </html>
-

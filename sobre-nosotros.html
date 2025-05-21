@@ -6,6 +6,72 @@
   <title>Sobre nosotros - GUIDIA</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const languageSelect = document.getElementById("language");
+    const t = {
+      es: {
+        nav: ["Inicio", "Todos los tours", "Próximos tours", "Sobre GUIDIA", "Contacto"],
+        title: "Sobre GUIDIA",
+        subtitle: "Te contamos <span class='highlight'>quiénes somos</span> y <span class='highlight'>por qué creamos esta experiencia</span>. Spoiler: tiene que ver con viajar libre, pero bien acompañado 😉",
+        p1: "Somos un equipo <span class='highlight'>curioso</span>, <span class='highlight'>viajero</span> y <span class='highlight'>tecnológico</span>. Esta es solo la primera parada de un recorrido que queremos compartir contigo.",
+        p2: "Creamos <strong class='highlight'>experiencias digitales</strong> que conectan contigo, para que puedas <em class='highlight'>disfrutar cada ciudad con libertad</em>, pero sin perder el contexto.",
+        p3: "Detrás de <span class='highlight'>GUIDIA</span> hay <span class='highlight'>personas creativas</span>, con <span class='highlight'>pasión por los viajes</span> y la <span class='highlight'>tecnología</span>. Este es solo el comienzo de un viaje que acaba de empezar.",
+        faqt: "Preguntas frecuentes",
+        q1: "¿Cómo funciona GUIDIA?",
+        a1: "Cuando llegas a una zona destacada de la ciudad, se activa un audio generado por inteligencia artificial que te explica qué estás viendo, sin que tengas que tocar nada.",
+        q2: "¿Necesito conexión a internet?",
+        a2: "Sí, para que los audios se activen automáticamente y puedas recibir contenido actualizado.",
+        q3: "¿Está disponible en cualquier ciudad?",
+        a3: "De momento estamos lanzando tours en ciudades seleccionadas, pero seguimos ampliando destinos cada mes.",
+      },
+      en: {
+        nav: ["Home", "All Tours", "Upcoming Tours", "About GUIDIA", "Contact"],
+        title: "About GUIDIA",
+        subtitle: "Learn <span class='highlight'>who we are</span> and <span class='highlight'>why we created this experience</span>. Spoiler: it's about traveling freely, but well accompanied 😉",
+        p1: "We are a <span class='highlight'>curious</span>, <span class='highlight'>travel-loving</span>, and <span class='highlight'>tech-driven</span> team. This is just the first stop of a journey we want to share with you.",
+        p2: "We create <strong class='highlight'>digital experiences</strong> that connect with you, so you can <em class='highlight'>enjoy every city with freedom</em>, without losing context.",
+        p3: "Behind <span class='highlight'>GUIDIA</span> are <span class='highlight'>creative people</span> with a <span class='highlight'>passion for travel</span> and <span class='highlight'>technology</span>. This is only the beginning of an exciting journey.",
+        faqt: "Frequently Asked Questions",
+        q1: "How does GUIDIA work?",
+        a1: "When you reach a key spot in the city, an AI-generated audio plays automatically to explain what you're seeing — hands-free.",
+        q2: "Do I need an internet connection?",
+        a2: "Yes, so the audios can activate automatically and you receive up-to-date content.",
+        q3: "Is it available in every city?",
+        a3: "We’re launching tours in selected cities for now, but expanding to more destinations every month.",
+      }
+    };
+
+    function applyLang(lang) {
+      const tx = t[lang];
+      document.querySelectorAll("nav .nav-link").forEach((link, i) => link.textContent = tx.nav[i]);
+      document.querySelector(".page-intro h1").textContent = tx.title;
+      document.querySelector(".page-subtext").innerHTML = tx.subtitle;
+
+      const ps = document.querySelectorAll(".page-intro p:not(.page-subtext)");
+      ps[0].innerHTML = tx.p1;
+      ps[1].innerHTML = tx.p2;
+      ps[2].innerHTML = tx.p3;
+
+      document.querySelector(".faqs h2").innerText = tx.faqt;
+      const faqBtns = document.querySelectorAll(".faq-question");
+      const faqAns = document.querySelectorAll(".faq-answer p");
+      faqBtns[0].textContent = tx.q1;
+      faqAns[0].textContent = tx.a1;
+      faqBtns[1].textContent = tx.q2;
+      faqAns[1].textContent = tx.a2;
+      faqBtns[2].textContent = tx.q3;
+      faqAns[2].textContent = tx.a3;
+    }
+
+    document.getElementById("language").addEventListener("change", e => {
+      applyLang(e.target.value);
+    });
+
+    applyLang(document.getElementById("language").value);
+  });
+</script>
+
 </head>
 <body>
 

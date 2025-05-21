@@ -6,6 +6,49 @@
   <title>Contacto - GUIDIA</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const languageSelect = document.getElementById("language");
+      const t = {
+        es: {
+          nav: ["Inicio", "Todos los tours", "Próximos tours", "Sobre GUIDIA", "Contacto"],
+          title: "¿Quieres contactar con nosotros?",
+          subtitle: "Estaremos encantados de ayudarte. <span class='highlight'>GUIDIA</span> está aquí para <span class='highlight'>responder tus dudas</span> y <span class='highlight'>acompañarte en tu viaje</span>.",
+          name: "Nombre",
+          email: "Email",
+          message: "Mensaje",
+          send: "Enviar mensaje"
+        },
+        en: {
+          nav: ["Home", "All Tours", "Upcoming Tours", "About GUIDIA", "Contact"],
+          title: "Want to get in touch with us?",
+          subtitle: "<span class='highlight'>GUIDIA</span> is here to <span class='highlight'>answer your questions</span> and <span class='highlight'>guide you on your journey</span>.",
+          name: "Name",
+          email: "Email",
+          message: "Message",
+          send: "Send message"
+        }
+      };
+
+      function applyLang(lang) {
+        const tx = t[lang];
+        document.querySelectorAll("nav .nav-link").forEach((link, i) => link.textContent = tx.nav[i]);
+        document.querySelector("h1").innerText = tx.title;
+        document.querySelector(".page-subtext").innerHTML = tx.subtitle;
+        document.querySelector("label[for='nombre']").innerText = tx.name;
+        document.querySelector("label[for='email']").innerText = tx.email;
+        document.querySelector("label[for='mensaje']").innerText = tx.message;
+        document.querySelector(".view-button").innerText = tx.send;
+      }
+
+      languageSelect.addEventListener("change", () => {
+        applyLang(languageSelect.value);
+      });
+
+      applyLang(languageSelect.value);
+    });
+  </script>
 </head>
 <body>
 
@@ -37,23 +80,21 @@
     </section>
 
     <form class="contact-form" action="https://formspree.io/f/mkgrypwg" method="POST">
-  <label for="nombre">Nombre</label>
-  <input type="text" id="nombre" name="nombre" required />
+      <label for="nombre">Nombre</label>
+      <input type="text" id="nombre" name="nombre" required />
 
-  <label for="email">Email</label>
-  <input type="email" id="email" name="email" required />
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required />
 
-  <label for="mensaje">Mensaje</label>
-  <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+      <label for="mensaje">Mensaje</label>
+      <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
 
-  <button type="submit" class="view-button">Enviar mensaje</button>
-</form>
-
+      <button type="submit" class="view-button">Enviar mensaje</button>
+    </form>
   </main>
 
   <footer>
     © 2025 GUIDIA · Todos los derechos reservados.
   </footer>
-
 </body>
 </html>

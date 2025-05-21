@@ -6,9 +6,88 @@
   <title>GUIDIA</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const languageSelect = document.getElementById("language");
+      const translations = {
+        es: {
+          heading: "Tu audioguía digital para descubrir ciudades a tu ritmo",
+          intro: "<span class='highlight'>GUIDIA</span> es una app web de rutas turísticas autoguiadas con <strong>audios inteligentes generados por IA</strong>. Al llegar a cada punto clave del recorrido, la narración se activa automáticamente.<br>Sin tocar nada. Caminas, exploras… y tu móvil <em>te cuenta lo que ves</em>.",
+          subtext: "Tours destacados",
+          tours: [
+            {
+              title: "Benidorm histórico",
+              desc: "Recorre los 5 lugares más emblemáticos de Benidorm con una audioguía digital que se activa sola: el Castillo, la Isla y mucho más.",
+              button: "Ver tour"
+            },
+            {
+              title: "Altea pintoresca",
+              desc: "Pasea por el casco antiguo de Altea, sus calles blancas, miradores y cúpulas azules con una guía inteligente que te lo cuenta todo.",
+              button: "Ver tour"
+            },
+            {
+              title: "Guadalest entre montañas",
+              desc: "Descubre uno de los pueblos más bonitos de Alicante, con castillos, museos y vistas increíbles. Todo explicado a tu ritmo, con IA.",
+              button: "Ver tour"
+            }
+          ],
+          allTours: "Ver todos los tours",
+          nav: ["Inicio", "Todos los tours", "Próximos tours", "Sobre GUIDIA", "Contacto"]
+        },
+        en: {
+          heading: "Your digital audio guide to discover cities at your own pace",
+          intro: "<span class='highlight'>GUIDIA</span> is a web app with self-guided tour routes and <strong>AI-generated smart audios</strong>. When you arrive at a key point, narration starts automatically.<br>No tapping. Just walk, explore... and your phone <em>tells you what you see</em>.",
+          subtext: "Featured tours",
+          tours: [
+            {
+              title: "Historic Benidorm",
+              desc: "Explore the 5 most iconic places in Benidorm with a smart audio guide: the Castle, the Island and more.",
+              button: "View tour"
+            },
+            {
+              title: "Charming Altea",
+              desc: "Stroll through Altea's old town, white streets, scenic viewpoints and blue domes with a smart guide that tells you everything.",
+              button: "View tour"
+            },
+            {
+              title: "Guadalest in the mountains",
+              desc: "Discover one of the most beautiful villages in Alicante, with castles, museums and stunning views. All explained at your pace, with AI.",
+              button: "View tour"
+            }
+          ],
+          allTours: "See all tours",
+          nav: ["Home", "All tours", "Upcoming Tours", "About GUIDIA", "Contact"]
+        }
+      };
+
+      function applyTranslations(lang) {
+        const t = translations[lang];
+        document.querySelector(".intro-guidia h2").innerText = t.heading;
+        document.querySelector(".intro-guidia p").innerHTML = t.intro;
+        document.querySelector(".page-subtext").innerText = t.subtext;
+
+        const tourCards = document.querySelectorAll(".tour-card");
+        tourCards.forEach((card, i) => {
+          card.querySelector("h2").innerText = t.tours[i].title;
+          card.querySelector("p").innerText = t.tours[i].desc;
+          card.querySelector("a").innerText = t.tours[i].button;
+        });
+
+        document.querySelector(".tour-action a").innerText = t.allTours;
+        document.querySelectorAll("nav .nav-link").forEach((link, i) => {
+          link.innerText = t.nav[i];
+        });
+      }
+
+      languageSelect.addEventListener("change", () => {
+        applyTranslations(languageSelect.value);
+      });
+
+      applyTranslations(languageSelect.value);
+    });
+  </script>
 </head>
 <body>
-
   <div class="language-dropdown">
     <select name="language" id="language">
       <option value="es" selected>🇪🇸 Español</option>
@@ -17,7 +96,7 @@
   </div>
 
   <header>
-   <img src="logo/logo-guidia.png" alt="Logo GUIDIA" class="logo-hero" />
+    <img src="logo/logo-guidia.png" alt="Logo GUIDIA" class="logo-hero" />
   </header>
 
   <nav>
@@ -29,48 +108,48 @@
   </nav>
 
   <main class="main-container">
-  <section class="intro-guidia">
-    <h2 class="highlight">Tu audioguía digital para descubrir ciudades a tu ritmo</h2>
-    <p>
-      <span class="highlight">GUIDIA</span> es una app web de rutas turísticas autoguiadas con <strong>audios inteligentes generados por IA</strong>. 
-      Al llegar a cada punto clave del recorrido, la narración se activa automáticamente. <br>
-      Sin tocar nada. Caminas, exploras… y tu móvil <em>te cuenta lo que ves</em>.
-    </p>
-  </section>
+    <section class="intro-guidia">
+      <h2 class="highlight">Tu audioguía digital para descubrir ciudades a tu ritmo</h2>
+      <p>
+        <span class="highlight">GUIDIA</span> es una app web de rutas turísticas autoguiadas con <strong>audios inteligentes generados por IA</strong>. 
+        Al llegar a cada punto clave del recorrido, la narración se activa automáticamente. <br>
+        Sin tocar nada. Caminas, exploras… y tu móvil <em>te cuenta lo que ves</em>.
+      </p>
+    </section>
 
-  <p class="page-subtext">Tours destacados</p>
+    <p class="page-subtext">Tours destacados</p>
 
-<div class="tour-card" style="background-image: url('tours/benidorm/images/portada-benidorm.png');">
-  <div class="content-overlay">
-    <h2>Benidorm histórico</h2>
-    <p>Recorre los 5 lugares más emblemáticos de Benidorm con una audioguía digital que se activa sola: el Castillo, la Isla y mucho más.</p>
-    <a href="benidorm.html" class="view-button">Ver tour</a>
-  </div>
-</div>
+    <div class="tour-card" style="background-image: url('tours/benidorm/images/portada-benidorm.png');">
+      <div class="content-overlay">
+        <h2>Benidorm histórico</h2>
+        <p>Recorre los 5 lugares más emblemáticos de Benidorm con una audioguía digital que se activa sola: el Castillo, la Isla y mucho más.</p>
+        <a href="benidorm.html" class="view-button">Ver tour</a>
+      </div>
+    </div>
 
-<div class="tour-card" style="background-image: url('tours/altea/images/portada-altea.png');">
-  <div class="content-overlay">
-    <h2>Altea pintoresca</h2>
-    <p>Pasea por el casco antiguo de Altea, sus calles blancas, miradores y cúpulas azules con una guía inteligente que te lo cuenta todo.</p>
-    <a href="#" class="view-button">Ver tour</a>
-  </div>
-</div>
+    <div class="tour-card" style="background-image: url('tours/altea/images/portada-altea.png');">
+      <div class="content-overlay">
+        <h2>Altea pintoresca</h2>
+        <p>Pasea por el casco antiguo de Altea, sus calles blancas, miradores y cúpulas azules con una guía inteligente que te lo cuenta todo.</p>
+        <a href="#" class="view-button">Ver tour</a>
+      </div>
+    </div>
 
-<div class="tour-card" style="background-image: url('tours/guadalest/images/portada-guadalest.png');">
-  <div class="content-overlay">
-    <h2>Guadalest entre montañas</h2>
-    <p>Descubre uno de los pueblos más bonitos de Alicante, con castillos, museos y vistas increíbles. Todo explicado a tu ritmo, con IA.</p>
-    <a href="#" class="view-button">Ver tour</a>
-  </div>
-</div>
-   <div class="tour-action">
-  <a href="todos-los-tours.html" class="view-button">Ver todos los tours</a>
-</div>
-</main>
+    <div class="tour-card" style="background-image: url('tours/guadalest/images/portada-guadalest.png');">
+      <div class="content-overlay">
+        <h2>Guadalest entre montañas</h2>
+        <p>Descubre uno de los pueblos más bonitos de Alicante, con castillos, museos y vistas increíbles. Todo explicado a tu ritmo, con IA.</p>
+        <a href="#" class="view-button">Ver tour</a>
+      </div>
+    </div>
+
+    <div class="tour-action">
+      <a href="todos-los-tours.html" class="view-button">Ver todos los tours</a>
+    </div>
+  </main>
 
   <footer>
     © 2025 GUIDIA · Todos los derechos reservados.
   </footer>
-
 </body>
 </html>

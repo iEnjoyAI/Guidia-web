@@ -6,6 +6,79 @@
   <title>GUIDIA - Todos los tours</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const languageSelect = document.getElementById("language");
+
+    const t = {
+      es: {
+        nav: ["Inicio", "Todos los tours", "Próximos tours", "Sobre GUIDIA", "Contacto"],
+        title: "Nuestros tours",
+        subtitle: "<em class='highlight'>Explora</em> cada lugar a tu ritmo con <span class='highlight'>rutas autoguiadas</span> y <strong class='highlight'>audioguía inteligente</strong> desde el móvil. <span class='highlight'>Sin grupos</span>, <span class='highlight'>sin horarios</span>, solo tú y la historia que te rodea.",
+        tours: [
+          {
+            title: "Benidorm histórico",
+            desc: "Recorre los 5 lugares más emblemáticos de Benidorm con una audioguía digital que se activa sola: el Castillo, la Isla y mucho más.",
+            btn: "Ver tour"
+          },
+          {
+            title: "Altea pintoresca",
+            desc: "Pasea por el casco antiguo de Altea, sus calles blancas, miradores y cúpulas azules con una guía inteligente que te lo cuenta todo.",
+            btn: "Ver tour"
+          },
+          {
+            title: "Guadalest entre montañas",
+            desc: "Descubre uno de los pueblos más bonitos de Alicante, con castillos, museos y vistas increíbles. Todo explicado a tu ritmo, con IA.",
+            btn: "Ver tour"
+          }
+        ]
+      },
+      en: {
+        nav: ["Home", "All Tours", "Upcoming Tours", "About GUIDIA", "Contact"],
+        title: "Our tours",
+        subtitle: "<em class='highlight'>Explore</em> each place at your own pace with <span class='highlight'>self-guided routes</span> and a <strong class='highlight'>smart audio guide</strong> from your phone. <span class='highlight'>No groups</span>, <span class='highlight'>no schedules</span>, just you and the story around you.",
+        tours: [
+          {
+            title: "Historic Benidorm",
+            desc: "Visit the 5 most iconic spots in Benidorm with an automatic smart audio guide: the castle, the island, and more.",
+            btn: "View tour"
+          },
+          {
+            title: "Charming Altea",
+            desc: "Wander through Altea’s old town — white streets, scenic views, and blue-domed churches with a guide that tells it all.",
+            btn: "View tour"
+          },
+          {
+            title: "Guadalest in the mountains",
+            desc: "Discover one of Alicante’s most beautiful villages — castles, museums, and stunning views at your pace, with AI.",
+            btn: "View tour"
+          }
+        ]
+      }
+    };
+
+    function applyLang(lang) {
+      const tx = t[lang];
+      document.querySelectorAll("nav .nav-link").forEach((link, i) => link.textContent = tx.nav[i]);
+      document.querySelector(".page-intro h1").textContent = tx.title;
+      document.querySelector(".page-subtext").innerHTML = tx.subtitle;
+
+      const cards = document.querySelectorAll(".tour-card");
+      cards.forEach((card, i) => {
+        card.querySelector("h2").textContent = tx.tours[i].title;
+        card.querySelector("p").textContent = tx.tours[i].desc;
+        card.querySelector("a").textContent = tx.tours[i].btn;
+      });
+    }
+
+    languageSelect.addEventListener("change", () => {
+      applyLang(languageSelect.value);
+    });
+
+    applyLang(languageSelect.value);
+  });
+</script>
+
 </head>
 <body>
 
