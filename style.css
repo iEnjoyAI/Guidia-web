@@ -244,7 +244,17 @@ footer {
   width: 100%;
   max-width: 100%;
 }
+/* 🛑 Evitar scroll horizontal en móvil */
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
 
+/* ✅ Asegurar que el contenido no sobresalga del viewport */
+* {
+  box-sizing: border-box;
+  max-width: 100%;
+}
 /* Responsive */
 @media (max-width: 768px) {
   nav {
@@ -253,7 +263,10 @@ footer {
     gap: 1em;
     padding: 1em 0;
   }
-
+body {
+    padding: 0;
+    margin: 0;
+  }
   .nav-link {
     font-size: 1em;
     display: block;
@@ -264,9 +277,17 @@ footer {
   }
 
   .main-container {
-    padding: 2em 1em;
+      margin: 2em 1em;
+    padding: 2em 1.2em;
+    border-radius: 16px;
   }
-
+  .tour-card {
+    padding: 1.5em;
+    min-height: 280px;
+  }
+.content-overlay {
+    padding: 1em;
+  }
   .language-dropdown {
     top: 1em;
     right: 1em;
