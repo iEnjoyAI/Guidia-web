@@ -485,3 +485,23 @@ header {
   color: #1E90FF;
   margin-bottom: 1em;
 }
+/* ✅ Estilo común para los botones de descarga de audio */
+.audio-download-button {
+  margin-bottom: 2em;
+  display: inline-block;
+}
+audio.tour-audio {
+  display: block;
+  margin: 1.5em auto;
+  width: 100%;
+  max-width: 400px;
+}
+.view-button.audio-download-button {
+  margin-top: 2em;
+  display: inline-block;
+}
+  .tour-audio {
+    background: red;
+    display: block;
+    margin-top: 1em;
+  }
