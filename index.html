@@ -59,7 +59,17 @@
           nav: ["Home", "All tours", "Upcoming Tours", "About GUIDIA", "Contact"]
         }
       };
+   // Cargamos el idioma que ya se había guardado o ponemos español por defecto
+    const savedLang = localStorage.getItem("guidiaLang") || "es";
+    languageSelect.value = savedLang;
+    applyTranslations(savedLang);
 
+    // Cuando el usuario cambia de idioma
+    languageSelect.addEventListener("change", function () {
+      const selectedLang = languageSelect.value;
+      localStorage.setItem("guidiaLang", selectedLang); // Lo guardamos
+      applyTranslations(selectedLang); // Aplicamos traducción
+    });
       function applyTranslations(lang) {
         const t = translations[lang];
         document.querySelector(".intro-guidia h2").innerText = t.heading;
@@ -123,7 +133,7 @@
       <div class="content-overlay">
         <h2>Benidorm histórico</h2>
         <p>Recorre los 5 lugares más emblemáticos de Benidorm con una audioguía digital que se activa sola: el Castillo, la Isla y mucho más.</p>
-        <a href="benidorm.html" class="view-button">Ver tour</a>
+        <a href="tours/benidorm/benidorm.html"class="view-button">Ver tour</a>
       </div>
     </div>
 

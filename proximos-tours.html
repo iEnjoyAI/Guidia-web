@@ -11,8 +11,8 @@
 
     document.addEventListener("DOMContentLoaded", function () {
       const languageSelect = document.getElementById("language");
-
       const translations = {
+
         es: {
           title: "Próximos tours",
           subtitle: "Rutas exclusivas que pronto estarán disponibles. Sé el primero en vivir nuevas experiencias con nuestras <strong class='highlight'>audioguías inteligentes</strong>. <em class='highlight'>Explora</em>, <em class='highlight'>escucha</em> y <em class='highlight'>descubre</em> con tu móvil, <span class='highlight'>sin horarios ni grupos</span>.",
@@ -52,7 +52,17 @@
           nav: ["Home", "All Tours", "Upcoming Tours", "About GUIDIA", "Contact"]
         }
       };
+ // Cargamos el idioma que ya se había guardado o ponemos español por defecto
+    const savedLang = localStorage.getItem("guidiaLang") || "es";
+    languageSelect.value = savedLang;
+    applyTranslations(savedLang);
 
+    // Cuando el usuario cambia de idioma
+    languageSelect.addEventListener("change", function () {
+      const selectedLang = languageSelect.value;
+      localStorage.setItem("guidiaLang", selectedLang); // Lo guardamos
+      applyTranslations(selectedLang); // Aplicamos traducción
+    });
       function applyTranslations(lang) {
         const t = translations[lang];
         document.querySelector(".page-intro h1").innerText = t.title;

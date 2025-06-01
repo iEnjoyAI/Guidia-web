@@ -56,7 +56,17 @@
         ]
       }
     };
+   // Cargamos el idioma que ya se había guardado o ponemos español por defecto
+    const savedLang = localStorage.getItem("guidiaLang") || "es";
+    languageSelect.value = savedLang;
+    applyLang(savedLang);
 
+    // Cuando el usuario cambia de idioma
+    languageSelect.addEventListener("change", function () {
+      const selectedLang = languageSelect.value;
+      localStorage.setItem("guidiaLang", selectedLang); // Lo guardamos
+      applyLang(selectedLang); // Aplicamos traducción
+    });
     function applyLang(lang) {
       const tx = t[lang];
       document.querySelectorAll("nav .nav-link").forEach((link, i) => link.textContent = tx.nav[i]);

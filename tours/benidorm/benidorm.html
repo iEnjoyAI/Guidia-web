@@ -65,7 +65,17 @@
           download: "Download tour",
         }
       };
+   // Cargamos el idioma que ya se había guardado o ponemos español por defecto
+    const savedLang = localStorage.getItem("guidiaLang") || "es";
+    languageSelect.value = savedLang;
+    applyTranslations(savedLang);
 
+    // Cuando el usuario cambia de idioma
+    languageSelect.addEventListener("change", function () {
+      const selectedLang = languageSelect.value;
+      localStorage.setItem("guidiaLang", selectedLang); // Lo guardamos
+      applyTranslations(selectedLang); // Aplicamos traducción
+    });
       function applyTranslations(lang) {
         const t = translations[lang];
         document.querySelector(".page-intro h1").innerText = t.title;
