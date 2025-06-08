@@ -156,11 +156,20 @@
       Un <span class="highlight">pulmón verde</span> que atraviesa el centro urbano, diseñado por el reconocido arquitecto <span class="highlight">Ricardo Bofill</span>. 
       Su estilo <span class="highlight">neoclásico</span> y sus <span class="highlight">anfiteatros al aire libre</span> hacen de este lugar un descanso con personalidad propia en plena ciudad.
     </p>
-    <a href="audios/parque-laiguera.mp3" download class="view-button audio-download-button">Descargar este audio</a>
-    <audio controls class="tour-audio">
-  <source src="audios/parque-laiguera.mp3" type="audio/mpeg">
-  Tu navegador no soporta audio.
-</audio>
+   <a href="/audios/es/benidorm/intro-parque.mp3" download class="view-button audio-download-button">
+  Descargar este audio
+</a>
+
+<div class="guidia-audio-player">
+  <button class="play-pause" aria-label="Play/Pause">▶️</button>
+  <div class="progress-container">
+    <div class="progress-bar"></div>
+  </div>
+  <span class="time">00:00</span>
+</div>
+
+<audio src="/audios/es/benidorm/intro-parque.mp3" class="hidden-audio"></audio>
+
   </div>
 </section>
 
@@ -174,10 +183,15 @@
 <a href="audios/iglesia-san-jaime.mp3" download class="view-button audio-download-button">
   Descargar este audio
 </a>
-<audio controls class="tour-audio">
-  <source src="audios/iglesia-san-jaime.mp3" type="audio/mpeg">
-  Tu navegador no soporta audio.
-</audio>
+<div class="guidia-audio-player">
+  <button class="play-pause" aria-label="Play/Pause">▶️</button>
+  <div class="progress-container">
+    <div class="progress-bar"></div>
+  </div>
+  <span class="time">00:00</span>
+</div>
+<audio src="audios/es/benidorm/" class="hidden-audio"></audio>
+
         </div>
       </section>
 
@@ -192,10 +206,14 @@
 <a href="audios/castillo-benidorm.mp3" download class="view-button audio-download-button">
   Descargar este audio
 </a>
-<audio controls class="tour-audio">
-  <source src="audios/castillo-benidorm.mp3" type="audio/mpeg">
-  Tu navegador no soporta audio.
-</audio>
+<div class="guidia-audio-player">
+  <button class="play-pause" aria-label="Play/Pause">▶️</button>
+  <div class="progress-container">
+    <div class="progress-bar"></div>
+  </div>
+  <span class="time">00:00</span>
+</div>
+<audio src="audios/es/benidorm/" class="hidden-audio"></audio>
   </div>
 </section>
 
@@ -210,10 +228,14 @@
     <a href="audios/playa-poniente.mp3" download class="view-button audio-download-button">
   Descargar este audio
 </a>
-<audio controls class="tour-audio">
-  <source src="audios/playa-poniente.mp3" type="audio/mpeg">
-  Tu navegador no soporta audio.
-</audio>
+<div class="guidia-audio-player">
+  <button class="play-pause" aria-label="Play/Pause">▶️</button>
+  <div class="progress-container">
+    <div class="progress-bar"></div>
+  </div>
+  <span class="time">00:00</span>
+</div>
+<audio src="audios/es/benidorm/" class="hidden-audio"></audio>
   </div>
 </section>
 
@@ -226,10 +248,14 @@
 <a href="audios/tossal-cala.mp3" download class="view-button audio-download-button">
   Descargar este audio
 </a>
-<audio controls class="tour-audio">
-  <source src="audios/tossal-cala.mp3" type="audio/mpeg">
-  Tu navegador no soporta audio.
-</audio>
+<div class="guidia-audio-player">
+  <button class="play-pause" aria-label="Play/Pause">▶️</button>
+  <div class="progress-container">
+    <div class="progress-bar"></div>
+  </div>
+  <span class="time">00:00</span>
+</div>
+<audio src="audios/es/benidorm/" class="hidden-audio"></audio>
         </div>
       </section>
     </section>
@@ -249,10 +275,14 @@
  <a href="audios/cruz.mp3" download class="view-button audio-download-button">
   Descargar este audio
 </a>
-<audio controls class="tour-audio">
-  <source src="audios/cruz.mp3" type="audio/mpeg">
-  Tu navegador no soporta audio.
-</audio>
+<div class="guidia-audio-player">
+  <button class="play-pause" aria-label="Play/Pause">▶️</button>
+  <div class="progress-container">
+    <div class="progress-bar"></div>
+  </div>
+  <span class="time">00:00</span>
+</div>
+<audio src="audios/es/benidorm/" class="hidden-audio"></audio>
   </div>
 </section>
     <!-- Botón general para descargar el tour completo -->
@@ -306,6 +336,39 @@
   <footer>
     © 2025 GUIDIA · Todos los derechos reservados.
   </footer>
+<script>
+  document.querySelectorAll('.guidia-audio-player').forEach((player, index) => {
+    const button = player.querySelector('.play-pause');
+    const progressBar = player.querySelector('.progress-bar');
+    const timeDisplay = player.querySelector('.time');
+    const audio = document.querySelectorAll('.hidden-audio')[index];
+
+    button.addEventListener('click', () => {
+      if (audio.paused) {
+        audio.play();
+        button.textContent = '⏸️';
+      } else {
+        audio.pause();
+        button.textContent = '▶️';
+      }
+    });
+
+    audio.addEventListener('timeupdate', () => {
+      const progress = (audio.currentTime / audio.duration) * 100;
+      progressBar.style.width = `${progress}%`;
+
+      const minutes = Math.floor(audio.currentTime / 60);
+      const seconds = Math.floor(audio.currentTime % 60).toString().padStart(2, '0');
+      timeDisplay.textContent = `${minutes}:${seconds}`;
+    });
+
+    audio.addEventListener('ended', () => {
+      button.textContent = '▶️';
+      progressBar.style.width = '0%';
+      timeDisplay.textContent = '00:00';
+    });
+  });
+</script>
 
 </body>
 </html>

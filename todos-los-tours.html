@@ -19,17 +19,17 @@
           {
             title: "Benidorm histórico",
             desc: "Recorre los 5 lugares más emblemáticos de Benidorm con una audioguía digital que se activa sola: el Castillo, la Isla y mucho más.",
-            btn: "Ver tour"
+            btn: "Acceder al tour →"
           },
           {
             title: "Altea pintoresca",
             desc: "Pasea por el casco antiguo de Altea, sus calles blancas, miradores y cúpulas azules con una guía inteligente que te lo cuenta todo.",
-            btn: "Ver tour"
+            btn: "Acceder al tour →"
           },
           {
             title: "Guadalest entre montañas",
             desc: "Descubre uno de los pueblos más bonitos de Alicante, con castillos, museos y vistas increíbles. Todo explicado a tu ritmo, con IA.",
-            btn: "Ver tour"
+            btn: "Acceder al tour →"
           }
         ]
       },
@@ -41,17 +41,17 @@
           {
             title: "Historic Benidorm",
             desc: "Visit the 5 most iconic spots in Benidorm with an automatic smart audio guide: the castle, the island, and more.",
-            btn: "View tour"
+            btn:  "Access the tour →"
           },
           {
             title: "Charming Altea",
             desc: "Wander through Altea’s old town — white streets, scenic views, and blue-domed churches with a guide that tells it all.",
-            btn: "View tour"
+            btn:  "Access the tour →"
           },
           {
             title: "Guadalest in the mountains",
             desc: "Discover one of Alicante’s most beautiful villages — castles, museums, and stunning views at your pace, with AI.",
-            btn: "View tour"
+            btn:  "Access the tour →"
           }
         ]
       }
@@ -118,15 +118,13 @@
   <em class="highlight">Explora</em> cada lugar a tu ritmo con <span class="highlight">rutas autoguiadas</span> y <strong class="highlight">audioguía inteligente</strong> desde el móvil. 
   <span class="highlight">Sin grupos</span>, <span class="highlight">sin horarios</span>, solo tú y la historia que te rodea.
 </p>
-
-    </section>
+       </section>
 
     <div class="tour-card" style="background-image: url('tours/benidorm/images/portada-benidorm.png');">
       <div class="content-overlay">
         <h2>Benidorm histórico</h2>
         <p>Recorre los 5 lugares más emblemáticos de Benidorm con una audioguía digital que se activa sola: el Castillo, la Isla y mucho más.</p>
-        <a href="tours/benidorm/benidorm.html" class="view-button">Ver tour</a>
-
+        <a href="tours/benidorm/benidorm.html" class="view-button">Acceder al tour →</a>
       </div>
     </div>
 
@@ -134,7 +132,7 @@
       <div class="content-overlay">
         <h2>Altea pintoresca</h2>
         <p>Pasea por el casco antiguo de Altea, sus calles blancas, miradores y cúpulas azules con una guía inteligente que te lo cuenta todo.</p>
-        <a href="altea.html" class="view-button">Ver tour</a>
+        <a href="altea.html" class="view-button">Acceder al tour →</a>
       </div>
     </div>
 
@@ -142,9 +140,42 @@
       <div class="content-overlay">
         <h2>Guadalest entre montañas</h2>
         <p>Descubre uno de los pueblos más bonitos de Alicante, con castillos, museos y vistas increíbles. Todo explicado a tu ritmo, con IA.</p>
-        <a href="guadalest.html" class="view-button">Ver tour</a>
+        <a href="guadalest.html" class="view-button">Acceder al tour →</a>
       </div>
     </div>
+
+    <section class="next-tours-cta" style="text-align:center; margin-top: 3em;">
+      <p id="cta-text" style="font-size: 1.1em; margin-bottom: 0.5em;"></p>
+      <a href="proximos-tours.html" class="view-button cta-button">→</a>
+    </section>
+
+    <script>
+      const ctaText = {
+        es: {
+          text: "¿Quieres más aventuras? Descubre los próximos tours de GUIDIA.",
+          button: "Explorar próximos tours →"
+        },
+        en: {
+          text: "Looking for more adventures? Discover GUIDIA's upcoming tours.",
+          button: "Explore upcoming tours →"
+        }
+      };
+
+      function updateCTA(lang) {
+        document.getElementById("cta-text").textContent = ctaText[lang].text;
+        const ctaButton = document.querySelector(".next-tours-cta a");
+        ctaButton.textContent = ctaText[lang].button;
+      }
+
+      // Espera a que se aplique el idioma
+      document.addEventListener("DOMContentLoaded", function () {
+        const lang = localStorage.getItem("guidiaLang") || "es";
+        updateCTA(lang);
+        document.getElementById("language").addEventListener("change", (e) => {
+          updateCTA(e.target.value);
+        });
+      });
+    </script>
 
   </main>
 

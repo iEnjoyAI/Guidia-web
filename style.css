@@ -200,6 +200,20 @@ nav {
   transform: translateY(-2px);
   box-shadow: 0 6px 16px rgba(24, 107, 181, 0.4);
 }
+.cta-button {
+  background-color: #1E90FF;
+  color: white;
+  padding: 0.75em 1.5em;
+  font-weight: 600;
+  border-radius: 30px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+}
+.cta-button:hover {
+  background-color: #186bb5;
+  transform: scale(1.05);
+}
 
 .tour-action {
   text-align: center;
@@ -492,11 +506,6 @@ header {
   color: #1E90FF;
   margin-bottom: 1em;
 }
-/* ✅ Estilo común para los botones de descarga de audio */
-.audio-download-button {
-  margin-bottom: 2em;
-  display: inline-block;
-}
 audio.tour-audio {
   display: block;
   margin: 1.5em auto;
@@ -507,8 +516,60 @@ audio.tour-audio {
   margin-top: 2em;
   display: inline-block;
 }
-  .tour-audio {
-    background: red;
-    display: block;
-    margin-top: 1em;
-  }
+  .guidia-audio-player {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  margin-top: 1.5em;
+  background: rgba(255, 255, 255, 0.9);
+  border: 2px dashed #1E90FF;
+  padding: 1em 1.5em;
+  border-radius: 50px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.play-pause {
+  background: #1E90FF;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.play-pause:hover {
+  background: #186bb5;
+}
+
+.progress-container {
+  flex: 1;
+  height: 14px;
+  background: repeating-linear-gradient(
+    to right,
+    #f5f5f5,
+    #f5f5f5 10px,
+    #ddd 10px,
+    #ddd 20px
+  );
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(to right, #1E90FF, #00C9FF);
+  border-radius: 4px;
+  transition: width 0.1s;
+}
+
+.time {
+  font-size: 0.9em;
+  color: #333;
+}
+
+.hidden-audio {
+  display: none;
+}
